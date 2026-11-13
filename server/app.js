@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import "./config/passport.js";
+import { sessionConfig } from "./config/passport.js";
 import apiRoutes from "./routes/index.js";
 
 const app = express();
@@ -10,6 +10,9 @@ app.use(express.json());
 
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL not set");
 if (!process.env.SECRET_KEY) throw new Error("SECRET_KEY not set");
+if (!process.env.SALT_LENGTH) throw new Error("SALT_LENGTH not set");
+
+sessionConfig(app);
 
 app.use("/api", apiRoutes);
 

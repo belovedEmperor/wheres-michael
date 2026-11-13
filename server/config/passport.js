@@ -1,22 +1,23 @@
 import expressSession from "express-session";
 import { PrismaSessionStore } from "@quixo3/prisma-session-store";
-import app from "../app.js";
-app.use(
-  expressSession({
-    cookie: {
-      maxAge: 14 * 24 * 60 * 60 * 1000, // ms
-    },
-    secret: process.env.SECRET_KEY,
-    resave: false,
-    saveUninitialized: false,
-    store: new PrismaSessionStore(prisma, {
-      checkPeriod: 2 * 60 * 1000, //ms
-      dbRecordIdIsSessionId: true,
-      dbRecordIdFunction: undefined,
+const sessionConfig = (app) => {
+  app.use(
+    expressSession({
+      cookie: {
+        maxAge: 14 * 24 * 60 * 60 * 1000, // ms
+      },
+      secret: process.env.SECRET_KEY,
+      resave: false,
+      saveUninitialized: false,
+      store: new PrismaSessionStore(prisma, {
+        checkPeriod: 2 * 60 * 1000, //ms
+        dbRecordIdIsSessionId: true,
+        dbRecordIdFunction: undefined,
+      }),
     }),
-  }),
-);
-app.use(passport.session());
+  );
+  app.use(passport.session());
+};
 
 import { prisma } from "../lib/prisma.js";
 import passport from "passport";
@@ -64,7 +65,4 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-app.use((req, res, next) => {
-  res.locals.currentUser = req.user;
-  next();
-});
+export { sessionConfig };
