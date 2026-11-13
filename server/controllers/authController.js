@@ -9,13 +9,13 @@ export async function register(req, res, next) {
       Number(process.env.SALT_LENGTH),
     );
 
-    const user = await prisma.user.create({
-      data: {
-        email: req.body.email.trim().toLowerCase(),
-        password: hashedPassword,
-      },
-      omit: { password: true },
-    });
+    const data = {
+      username: req.body.username.trim(),
+      email: req.body.email.trim().toLowerCase(),
+      password: hashedPassword,
+    };
+
+    const user = await prisma.user.create({ data, omit: { password: true } });
 
     return req.login(user, (err) => {
       if (err) return next(err);
@@ -36,7 +36,7 @@ export function login(req, res, next) {
         .json({ message: info?.message || "Incorrect email or password." });
     req.login(user, (err) => {
       if (err) return next(err);
-      res.json({ id: user.id, email: user.email });
+      res.json({ id: user.id, email: user.email, username: user.username });
     });
   })(req, res, next);
 }
@@ -63,8 +63,18 @@ export async function get(req, res, next) {
 
 export async function update(req, res, next) {
   try {
+    const data = {};
+    if (req.body.username) data.username = req.body.username;
+    if (req.body.email) data.email = req.body.email;
+    if (req.body.password)
+      data.password = await bcrypt.hash(
+        req.body.password,
+        Number(process.env.SALT_LENGTH),
+      );
+
     const user = await prisma.user.update({
       where: { id: req.user.id },
+      data,
       omit: { password: true },
     });
     res.json(user);
