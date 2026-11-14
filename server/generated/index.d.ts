@@ -3469,7 +3469,7 @@ export namespace Prisma {
 
   export type ImageMinAggregateOutputType = {
     id: number | null
-    image: Bytes | null
+    filename: string | null
     width: number | null
     height: number | null
     x: number | null
@@ -3479,7 +3479,7 @@ export namespace Prisma {
 
   export type ImageMaxAggregateOutputType = {
     id: number | null
-    image: Bytes | null
+    filename: string | null
     width: number | null
     height: number | null
     x: number | null
@@ -3489,7 +3489,7 @@ export namespace Prisma {
 
   export type ImageCountAggregateOutputType = {
     id: number
-    image: number
+    filename: number
     width: number
     height: number
     x: number
@@ -3519,7 +3519,7 @@ export namespace Prisma {
 
   export type ImageMinAggregateInputType = {
     id?: true
-    image?: true
+    filename?: true
     width?: true
     height?: true
     x?: true
@@ -3529,7 +3529,7 @@ export namespace Prisma {
 
   export type ImageMaxAggregateInputType = {
     id?: true
-    image?: true
+    filename?: true
     width?: true
     height?: true
     x?: true
@@ -3539,7 +3539,7 @@ export namespace Prisma {
 
   export type ImageCountAggregateInputType = {
     id?: true
-    image?: true
+    filename?: true
     width?: true
     height?: true
     x?: true
@@ -3636,7 +3636,7 @@ export namespace Prisma {
 
   export type ImageGroupByOutputType = {
     id: number
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -3665,7 +3665,7 @@ export namespace Prisma {
 
   export type ImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    image?: boolean
+    filename?: boolean
     width?: boolean
     height?: boolean
     x?: boolean
@@ -3677,7 +3677,7 @@ export namespace Prisma {
 
   export type ImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    image?: boolean
+    filename?: boolean
     width?: boolean
     height?: boolean
     x?: boolean
@@ -3687,7 +3687,7 @@ export namespace Prisma {
 
   export type ImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    image?: boolean
+    filename?: boolean
     width?: boolean
     height?: boolean
     x?: boolean
@@ -3697,7 +3697,7 @@ export namespace Prisma {
 
   export type ImageSelectScalar = {
     id?: boolean
-    image?: boolean
+    filename?: boolean
     width?: boolean
     height?: boolean
     x?: boolean
@@ -3705,7 +3705,7 @@ export namespace Prisma {
     length?: boolean
   }
 
-  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "image" | "width" | "height" | "x" | "y" | "length", ExtArgs["result"]["image"]>
+  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "filename" | "width" | "height" | "x" | "y" | "length", ExtArgs["result"]["image"]>
   export type ImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userScores?: boolean | Image$userScoresArgs<ExtArgs>
     _count?: boolean | ImageCountOutputTypeDefaultArgs<ExtArgs>
@@ -3720,7 +3720,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      image: Prisma.Bytes
+      filename: string
       width: number
       height: number
       x: number
@@ -4151,7 +4151,7 @@ export namespace Prisma {
    */
   interface ImageFieldRefs {
     readonly id: FieldRef<"Image", 'Int'>
-    readonly image: FieldRef<"Image", 'Bytes'>
+    readonly filename: FieldRef<"Image", 'String'>
     readonly width: FieldRef<"Image", 'Int'>
     readonly height: FieldRef<"Image", 'Int'>
     readonly x: FieldRef<"Image", 'Int'>
@@ -5616,7 +5616,7 @@ export namespace Prisma {
 
   export const ImageScalarFieldEnum: {
     id: 'id',
-    image: 'image',
+    filename: 'filename',
     width: 'width',
     height: 'height',
     x: 'x',
@@ -5705,20 +5705,6 @@ export namespace Prisma {
    * Reference to a field of type 'DateTime[]'
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Bytes'
-   */
-  export type BytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes'>
-    
-
-
-  /**
-   * Reference to a field of type 'Bytes[]'
-   */
-  export type ListBytesFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Bytes[]'>
     
 
 
@@ -5856,7 +5842,7 @@ export namespace Prisma {
     OR?: ImageWhereInput[]
     NOT?: ImageWhereInput | ImageWhereInput[]
     id?: IntFilter<"Image"> | number
-    image?: BytesFilter<"Image"> | Bytes
+    filename?: StringFilter<"Image"> | string
     width?: IntFilter<"Image"> | number
     height?: IntFilter<"Image"> | number
     x?: IntFilter<"Image"> | number
@@ -5867,7 +5853,7 @@ export namespace Prisma {
 
   export type ImageOrderByWithRelationInput = {
     id?: SortOrder
-    image?: SortOrder
+    filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
     x?: SortOrder
@@ -5881,7 +5867,7 @@ export namespace Prisma {
     AND?: ImageWhereInput | ImageWhereInput[]
     OR?: ImageWhereInput[]
     NOT?: ImageWhereInput | ImageWhereInput[]
-    image?: BytesFilter<"Image"> | Bytes
+    filename?: StringFilter<"Image"> | string
     width?: IntFilter<"Image"> | number
     height?: IntFilter<"Image"> | number
     x?: IntFilter<"Image"> | number
@@ -5892,7 +5878,7 @@ export namespace Prisma {
 
   export type ImageOrderByWithAggregationInput = {
     id?: SortOrder
-    image?: SortOrder
+    filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
     x?: SortOrder
@@ -5910,7 +5896,7 @@ export namespace Prisma {
     OR?: ImageScalarWhereWithAggregatesInput[]
     NOT?: ImageScalarWhereWithAggregatesInput | ImageScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Image"> | number
-    image?: BytesWithAggregatesFilter<"Image"> | Bytes
+    filename?: StringWithAggregatesFilter<"Image"> | string
     width?: IntWithAggregatesFilter<"Image"> | number
     height?: IntWithAggregatesFilter<"Image"> | number
     x?: IntWithAggregatesFilter<"Image"> | number
@@ -6067,7 +6053,7 @@ export namespace Prisma {
   }
 
   export type ImageCreateInput = {
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -6078,7 +6064,7 @@ export namespace Prisma {
 
   export type ImageUncheckedCreateInput = {
     id?: number
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -6088,7 +6074,7 @@ export namespace Prisma {
   }
 
   export type ImageUpdateInput = {
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number
@@ -6099,7 +6085,7 @@ export namespace Prisma {
 
   export type ImageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number
@@ -6110,7 +6096,7 @@ export namespace Prisma {
 
   export type ImageCreateManyInput = {
     id?: number
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -6119,7 +6105,7 @@ export namespace Prisma {
   }
 
   export type ImageUpdateManyMutationInput = {
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number
@@ -6129,7 +6115,7 @@ export namespace Prisma {
 
   export type ImageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number
@@ -6386,16 +6372,9 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type BytesFilter<$PrismaModel = never> = {
-    equals?: Bytes | BytesFieldRefInput<$PrismaModel>
-    in?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    notIn?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    not?: NestedBytesFilter<$PrismaModel> | Bytes
-  }
-
   export type ImageCountOrderByAggregateInput = {
     id?: SortOrder
-    image?: SortOrder
+    filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
     x?: SortOrder
@@ -6414,7 +6393,7 @@ export namespace Prisma {
 
   export type ImageMaxOrderByAggregateInput = {
     id?: SortOrder
-    image?: SortOrder
+    filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
     x?: SortOrder
@@ -6424,7 +6403,7 @@ export namespace Prisma {
 
   export type ImageMinOrderByAggregateInput = {
     id?: SortOrder
-    image?: SortOrder
+    filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
     x?: SortOrder
@@ -6439,16 +6418,6 @@ export namespace Prisma {
     x?: SortOrder
     y?: SortOrder
     length?: SortOrder
-  }
-
-  export type BytesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Bytes | BytesFieldRefInput<$PrismaModel>
-    in?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    notIn?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Bytes
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBytesFilter<$PrismaModel>
-    _max?: NestedBytesFilter<$PrismaModel>
   }
 
   export type SessionCountOrderByAggregateInput = {
@@ -6574,10 +6543,6 @@ export namespace Prisma {
     connectOrCreate?: UserScoresCreateOrConnectWithoutImageInput | UserScoresCreateOrConnectWithoutImageInput[]
     createMany?: UserScoresCreateManyImageInputEnvelope
     connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-  }
-
-  export type BytesFieldUpdateOperationsInput = {
-    set?: Bytes
   }
 
   export type UserScoresUpdateManyWithoutImageNestedInput = {
@@ -6738,23 +6703,6 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedBytesFilter<$PrismaModel = never> = {
-    equals?: Bytes | BytesFieldRefInput<$PrismaModel>
-    in?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    notIn?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    not?: NestedBytesFilter<$PrismaModel> | Bytes
-  }
-
-  export type NestedBytesWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Bytes | BytesFieldRefInput<$PrismaModel>
-    in?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    notIn?: Bytes[] | ListBytesFieldRefInput<$PrismaModel>
-    not?: NestedBytesWithAggregatesFilter<$PrismaModel> | Bytes
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBytesFilter<$PrismaModel>
-    _max?: NestedBytesFilter<$PrismaModel>
-  }
-
   export type UserScoresCreateWithoutUserInput = {
     startTime?: Date | string
     endTime?: Date | string | null
@@ -6824,7 +6772,7 @@ export namespace Prisma {
   }
 
   export type ImageCreateWithoutUserScoresInput = {
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -6834,7 +6782,7 @@ export namespace Prisma {
 
   export type ImageUncheckedCreateWithoutUserScoresInput = {
     id?: number
-    image: Bytes
+    filename: string
     width: number
     height: number
     x: number
@@ -6883,7 +6831,7 @@ export namespace Prisma {
   }
 
   export type ImageUpdateWithoutUserScoresInput = {
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number
@@ -6893,7 +6841,7 @@ export namespace Prisma {
 
   export type ImageUncheckedUpdateWithoutUserScoresInput = {
     id?: IntFieldUpdateOperationsInput | number
-    image?: BytesFieldUpdateOperationsInput | Bytes
+    filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
     x?: IntFieldUpdateOperationsInput | number

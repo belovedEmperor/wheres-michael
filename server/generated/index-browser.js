@@ -137,7 +137,7 @@ exports.Prisma.UserScoresScalarFieldEnum = {
 
 exports.Prisma.ImageScalarFieldEnum = {
   id: 'id',
-  image: 'image',
+  filename: 'filename',
   width: 'width',
   height: 'height',
   x: 'x',
