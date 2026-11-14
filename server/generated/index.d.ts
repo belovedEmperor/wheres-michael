@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model UserScores
+ * Model UserTimes
  * 
  */
-export type UserScores = $Result.DefaultSelection<Prisma.$UserScoresPayload>
+export type UserTimes = $Result.DefaultSelection<Prisma.$UserTimesPayload>
 /**
  * Model Image
  * 
@@ -166,14 +166,14 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.userScores`: Exposes CRUD operations for the **UserScores** model.
+   * `prisma.userTimes`: Exposes CRUD operations for the **UserTimes** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more UserScores
-    * const userScores = await prisma.userScores.findMany()
+    * // Fetch zero or more UserTimes
+    * const userTimes = await prisma.userTimes.findMany()
     * ```
     */
-  get userScores(): Prisma.UserScoresDelegate<ExtArgs, ClientOptions>;
+  get userTimes(): Prisma.UserTimesDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.image`: Exposes CRUD operations for the **Image** model.
@@ -642,7 +642,7 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    UserScores: 'UserScores',
+    UserTimes: 'UserTimes',
     Image: 'Image',
     Session: 'Session'
   };
@@ -660,7 +660,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "userScores" | "image" | "session"
+      modelProps: "user" | "userTimes" | "image" | "session"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -738,77 +738,77 @@ export namespace Prisma {
           }
         }
       }
-      UserScores: {
-        payload: Prisma.$UserScoresPayload<ExtArgs>
-        fields: Prisma.UserScoresFieldRefs
+      UserTimes: {
+        payload: Prisma.$UserTimesPayload<ExtArgs>
+        fields: Prisma.UserTimesFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.UserScoresFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload> | null
+            args: Prisma.UserTimesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.UserScoresFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           findFirst: {
-            args: Prisma.UserScoresFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload> | null
+            args: Prisma.UserTimesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.UserScoresFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           findMany: {
-            args: Prisma.UserScoresFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>[]
+            args: Prisma.UserTimesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>[]
           }
           create: {
-            args: Prisma.UserScoresCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           createMany: {
-            args: Prisma.UserScoresCreateManyArgs<ExtArgs>
+            args: Prisma.UserTimesCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.UserScoresCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>[]
+            args: Prisma.UserTimesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>[]
           }
           delete: {
-            args: Prisma.UserScoresDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           update: {
-            args: Prisma.UserScoresUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           deleteMany: {
-            args: Prisma.UserScoresDeleteManyArgs<ExtArgs>
+            args: Prisma.UserTimesDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.UserScoresUpdateManyArgs<ExtArgs>
+            args: Prisma.UserTimesUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.UserScoresUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>[]
+            args: Prisma.UserTimesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>[]
           }
           upsert: {
-            args: Prisma.UserScoresUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$UserScoresPayload>
+            args: Prisma.UserTimesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UserTimesPayload>
           }
           aggregate: {
-            args: Prisma.UserScoresAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateUserScores>
+            args: Prisma.UserTimesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateUserTimes>
           }
           groupBy: {
-            args: Prisma.UserScoresGroupByArgs<ExtArgs>
-            result: $Utils.Optional<UserScoresGroupByOutputType>[]
+            args: Prisma.UserTimesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<UserTimesGroupByOutputType>[]
           }
           count: {
-            args: Prisma.UserScoresCountArgs<ExtArgs>
-            result: $Utils.Optional<UserScoresCountAggregateOutputType> | number
+            args: Prisma.UserTimesCountArgs<ExtArgs>
+            result: $Utils.Optional<UserTimesCountAggregateOutputType> | number
           }
         }
       }
@@ -1084,7 +1084,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    userScores?: UserScoresOmit
+    userTimes?: UserTimesOmit
     image?: ImageOmit
     session?: SessionOmit
   }
@@ -1189,7 +1189,7 @@ export namespace Prisma {
    * UserCountOutputType without action
    */
   export type UserCountOutputTypeCountUserScoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
   }
 
 
@@ -1220,7 +1220,7 @@ export namespace Prisma {
    * ImageCountOutputType without action
    */
   export type ImageCountOutputTypeCountUserScoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
   }
 
 
@@ -1454,7 +1454,7 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      userScores: Prisma.$UserScoresPayload<ExtArgs>[]
+      userScores: Prisma.$UserTimesPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -1855,7 +1855,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    userScores<T extends User$userScoresArgs<ExtArgs> = {}>(args?: Subset<T, User$userScoresArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    userScores<T extends User$userScoresArgs<ExtArgs> = {}>(args?: Subset<T, User$userScoresArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2286,23 +2286,23 @@ export namespace Prisma {
    */
   export type User$userScoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
-    where?: UserScoresWhereInput
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
-    cursor?: UserScoresWhereUniqueInput
+    include?: UserTimesInclude<ExtArgs> | null
+    where?: UserTimesWhereInput
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
+    cursor?: UserTimesWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: UserScoresScalarFieldEnum | UserScoresScalarFieldEnum[]
+    distinct?: UserTimesScalarFieldEnum | UserTimesScalarFieldEnum[]
   }
 
   /**
@@ -2325,259 +2325,319 @@ export namespace Prisma {
 
 
   /**
-   * Model UserScores
+   * Model UserTimes
    */
 
-  export type AggregateUserScores = {
-    _count: UserScoresCountAggregateOutputType | null
-    _avg: UserScoresAvgAggregateOutputType | null
-    _sum: UserScoresSumAggregateOutputType | null
-    _min: UserScoresMinAggregateOutputType | null
-    _max: UserScoresMaxAggregateOutputType | null
+  export type AggregateUserTimes = {
+    _count: UserTimesCountAggregateOutputType | null
+    _avg: UserTimesAvgAggregateOutputType | null
+    _sum: UserTimesSumAggregateOutputType | null
+    _min: UserTimesMinAggregateOutputType | null
+    _max: UserTimesMaxAggregateOutputType | null
   }
 
-  export type UserScoresAvgAggregateOutputType = {
+  export type UserTimesAvgAggregateOutputType = {
     id: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
     userId: number | null
     imageId: number | null
   }
 
-  export type UserScoresSumAggregateOutputType = {
+  export type UserTimesSumAggregateOutputType = {
     id: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
     userId: number | null
     imageId: number | null
   }
 
-  export type UserScoresMinAggregateOutputType = {
+  export type UserTimesMinAggregateOutputType = {
     id: number | null
     startTime: Date | null
     endTime: Date | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
     userId: number | null
     imageId: number | null
   }
 
-  export type UserScoresMaxAggregateOutputType = {
+  export type UserTimesMaxAggregateOutputType = {
     id: number | null
     startTime: Date | null
     endTime: Date | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
     userId: number | null
     imageId: number | null
   }
 
-  export type UserScoresCountAggregateOutputType = {
+  export type UserTimesCountAggregateOutputType = {
     id: number
     startTime: number
     endTime: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
     imageId: number
     _all: number
   }
 
 
-  export type UserScoresAvgAggregateInputType = {
+  export type UserTimesAvgAggregateInputType = {
     id?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     userId?: true
     imageId?: true
   }
 
-  export type UserScoresSumAggregateInputType = {
+  export type UserTimesSumAggregateInputType = {
     id?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     userId?: true
     imageId?: true
   }
 
-  export type UserScoresMinAggregateInputType = {
+  export type UserTimesMinAggregateInputType = {
     id?: true
     startTime?: true
     endTime?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     userId?: true
     imageId?: true
   }
 
-  export type UserScoresMaxAggregateInputType = {
+  export type UserTimesMaxAggregateInputType = {
     id?: true
     startTime?: true
     endTime?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     userId?: true
     imageId?: true
   }
 
-  export type UserScoresCountAggregateInputType = {
+  export type UserTimesCountAggregateInputType = {
     id?: true
     startTime?: true
     endTime?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     userId?: true
     imageId?: true
     _all?: true
   }
 
-  export type UserScoresAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which UserScores to aggregate.
+     * Filter which UserTimes to aggregate.
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of UserScores to fetch.
+     * Determine the order of UserTimes to fetch.
      */
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: UserScoresWhereUniqueInput
+    cursor?: UserTimesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` UserScores from the position of the cursor.
+     * Take `±n` UserTimes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` UserScores.
+     * Skip the first `n` UserTimes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned UserScores
+     * Count returned UserTimes
     **/
-    _count?: true | UserScoresCountAggregateInputType
+    _count?: true | UserTimesCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: UserScoresAvgAggregateInputType
+    _avg?: UserTimesAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: UserScoresSumAggregateInputType
+    _sum?: UserTimesSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: UserScoresMinAggregateInputType
+    _min?: UserTimesMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: UserScoresMaxAggregateInputType
+    _max?: UserTimesMaxAggregateInputType
   }
 
-  export type GetUserScoresAggregateType<T extends UserScoresAggregateArgs> = {
-        [P in keyof T & keyof AggregateUserScores]: P extends '_count' | 'count'
+  export type GetUserTimesAggregateType<T extends UserTimesAggregateArgs> = {
+        [P in keyof T & keyof AggregateUserTimes]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateUserScores[P]>
-      : GetScalarType<T[P], AggregateUserScores[P]>
+        : GetScalarType<T[P], AggregateUserTimes[P]>
+      : GetScalarType<T[P], AggregateUserTimes[P]>
   }
 
 
 
 
-  export type UserScoresGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserScoresWhereInput
-    orderBy?: UserScoresOrderByWithAggregationInput | UserScoresOrderByWithAggregationInput[]
-    by: UserScoresScalarFieldEnum[] | UserScoresScalarFieldEnum
-    having?: UserScoresScalarWhereWithAggregatesInput
+  export type UserTimesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserTimesWhereInput
+    orderBy?: UserTimesOrderByWithAggregationInput | UserTimesOrderByWithAggregationInput[]
+    by: UserTimesScalarFieldEnum[] | UserTimesScalarFieldEnum
+    having?: UserTimesScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: UserScoresCountAggregateInputType | true
-    _avg?: UserScoresAvgAggregateInputType
-    _sum?: UserScoresSumAggregateInputType
-    _min?: UserScoresMinAggregateInputType
-    _max?: UserScoresMaxAggregateInputType
+    _count?: UserTimesCountAggregateInputType | true
+    _avg?: UserTimesAvgAggregateInputType
+    _sum?: UserTimesSumAggregateInputType
+    _min?: UserTimesMinAggregateInputType
+    _max?: UserTimesMaxAggregateInputType
   }
 
-  export type UserScoresGroupByOutputType = {
+  export type UserTimesGroupByOutputType = {
     id: number
     startTime: Date
     endTime: Date | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
     imageId: number
-    _count: UserScoresCountAggregateOutputType | null
-    _avg: UserScoresAvgAggregateOutputType | null
-    _sum: UserScoresSumAggregateOutputType | null
-    _min: UserScoresMinAggregateOutputType | null
-    _max: UserScoresMaxAggregateOutputType | null
+    _count: UserTimesCountAggregateOutputType | null
+    _avg: UserTimesAvgAggregateOutputType | null
+    _sum: UserTimesSumAggregateOutputType | null
+    _min: UserTimesMinAggregateOutputType | null
+    _max: UserTimesMaxAggregateOutputType | null
   }
 
-  type GetUserScoresGroupByPayload<T extends UserScoresGroupByArgs> = Prisma.PrismaPromise<
+  type GetUserTimesGroupByPayload<T extends UserTimesGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<UserScoresGroupByOutputType, T['by']> &
+      PickEnumerable<UserTimesGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof UserScoresGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof UserTimesGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], UserScoresGroupByOutputType[P]>
-            : GetScalarType<T[P], UserScoresGroupByOutputType[P]>
+              : GetScalarType<T[P], UserTimesGroupByOutputType[P]>
+            : GetScalarType<T[P], UserTimesGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type UserScoresSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type UserTimesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     startTime?: boolean
     endTime?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userScores"]>
+  }, ExtArgs["result"]["userTimes"]>
 
-  export type UserScoresSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type UserTimesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     startTime?: boolean
     endTime?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userScores"]>
+  }, ExtArgs["result"]["userTimes"]>
 
-  export type UserScoresSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type UserTimesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     startTime?: boolean
     endTime?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["userScores"]>
+  }, ExtArgs["result"]["userTimes"]>
 
-  export type UserScoresSelectScalar = {
+  export type UserTimesSelectScalar = {
     id?: boolean
     startTime?: boolean
     endTime?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
     userId?: boolean
     imageId?: boolean
   }
 
-  export type UserScoresOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "userId" | "imageId", ExtArgs["result"]["userScores"]>
-  export type UserScoresInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "boxCornerOneX" | "boxCornerOneY" | "boxCornerTwoX" | "boxCornerTwoY" | "userId" | "imageId", ExtArgs["result"]["userTimes"]>
+  export type UserTimesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
   }
-  export type UserScoresIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
   }
-  export type UserScoresIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
   }
 
-  export type $UserScoresPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "UserScores"
+  export type $UserTimesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "UserTimes"
     objects: {
       user: Prisma.$UserPayload<ExtArgs>
       image: Prisma.$ImagePayload<ExtArgs>
@@ -2586,138 +2646,142 @@ export namespace Prisma {
       id: number
       startTime: Date
       endTime: Date | null
+      boxCornerOneX: number
+      boxCornerOneY: number
+      boxCornerTwoX: number
+      boxCornerTwoY: number
       userId: number
       imageId: number
-    }, ExtArgs["result"]["userScores"]>
+    }, ExtArgs["result"]["userTimes"]>
     composites: {}
   }
 
-  type UserScoresGetPayload<S extends boolean | null | undefined | UserScoresDefaultArgs> = $Result.GetResult<Prisma.$UserScoresPayload, S>
+  type UserTimesGetPayload<S extends boolean | null | undefined | UserTimesDefaultArgs> = $Result.GetResult<Prisma.$UserTimesPayload, S>
 
-  type UserScoresCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<UserScoresFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: UserScoresCountAggregateInputType | true
+  type UserTimesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<UserTimesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: UserTimesCountAggregateInputType | true
     }
 
-  export interface UserScoresDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UserScores'], meta: { name: 'UserScores' } }
+  export interface UserTimesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['UserTimes'], meta: { name: 'UserTimes' } }
     /**
-     * Find zero or one UserScores that matches the filter.
-     * @param {UserScoresFindUniqueArgs} args - Arguments to find a UserScores
+     * Find zero or one UserTimes that matches the filter.
+     * @param {UserTimesFindUniqueArgs} args - Arguments to find a UserTimes
      * @example
-     * // Get one UserScores
-     * const userScores = await prisma.userScores.findUnique({
+     * // Get one UserTimes
+     * const userTimes = await prisma.userTimes.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends UserScoresFindUniqueArgs>(args: SelectSubset<T, UserScoresFindUniqueArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends UserTimesFindUniqueArgs>(args: SelectSubset<T, UserTimesFindUniqueArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one UserScores that matches the filter or throw an error with `error.code='P2025'`
+     * Find one UserTimes that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {UserScoresFindUniqueOrThrowArgs} args - Arguments to find a UserScores
+     * @param {UserTimesFindUniqueOrThrowArgs} args - Arguments to find a UserTimes
      * @example
-     * // Get one UserScores
-     * const userScores = await prisma.userScores.findUniqueOrThrow({
+     * // Get one UserTimes
+     * const userTimes = await prisma.userTimes.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends UserScoresFindUniqueOrThrowArgs>(args: SelectSubset<T, UserScoresFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends UserTimesFindUniqueOrThrowArgs>(args: SelectSubset<T, UserTimesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first UserScores that matches the filter.
+     * Find the first UserTimes that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresFindFirstArgs} args - Arguments to find a UserScores
+     * @param {UserTimesFindFirstArgs} args - Arguments to find a UserTimes
      * @example
-     * // Get one UserScores
-     * const userScores = await prisma.userScores.findFirst({
+     * // Get one UserTimes
+     * const userTimes = await prisma.userTimes.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends UserScoresFindFirstArgs>(args?: SelectSubset<T, UserScoresFindFirstArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends UserTimesFindFirstArgs>(args?: SelectSubset<T, UserTimesFindFirstArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first UserScores that matches the filter or
+     * Find the first UserTimes that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresFindFirstOrThrowArgs} args - Arguments to find a UserScores
+     * @param {UserTimesFindFirstOrThrowArgs} args - Arguments to find a UserTimes
      * @example
-     * // Get one UserScores
-     * const userScores = await prisma.userScores.findFirstOrThrow({
+     * // Get one UserTimes
+     * const userTimes = await prisma.userTimes.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends UserScoresFindFirstOrThrowArgs>(args?: SelectSubset<T, UserScoresFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends UserTimesFindFirstOrThrowArgs>(args?: SelectSubset<T, UserTimesFindFirstOrThrowArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more UserScores that matches the filter.
+     * Find zero or more UserTimes that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {UserTimesFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all UserScores
-     * const userScores = await prisma.userScores.findMany()
+     * // Get all UserTimes
+     * const userTimes = await prisma.userTimes.findMany()
      * 
-     * // Get first 10 UserScores
-     * const userScores = await prisma.userScores.findMany({ take: 10 })
+     * // Get first 10 UserTimes
+     * const userTimes = await prisma.userTimes.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const userScoresWithIdOnly = await prisma.userScores.findMany({ select: { id: true } })
+     * const userTimesWithIdOnly = await prisma.userTimes.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends UserScoresFindManyArgs>(args?: SelectSubset<T, UserScoresFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends UserTimesFindManyArgs>(args?: SelectSubset<T, UserTimesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a UserScores.
-     * @param {UserScoresCreateArgs} args - Arguments to create a UserScores.
+     * Create a UserTimes.
+     * @param {UserTimesCreateArgs} args - Arguments to create a UserTimes.
      * @example
-     * // Create one UserScores
-     * const UserScores = await prisma.userScores.create({
+     * // Create one UserTimes
+     * const UserTimes = await prisma.userTimes.create({
      *   data: {
-     *     // ... data to create a UserScores
+     *     // ... data to create a UserTimes
      *   }
      * })
      * 
      */
-    create<T extends UserScoresCreateArgs>(args: SelectSubset<T, UserScoresCreateArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends UserTimesCreateArgs>(args: SelectSubset<T, UserTimesCreateArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many UserScores.
-     * @param {UserScoresCreateManyArgs} args - Arguments to create many UserScores.
+     * Create many UserTimes.
+     * @param {UserTimesCreateManyArgs} args - Arguments to create many UserTimes.
      * @example
-     * // Create many UserScores
-     * const userScores = await prisma.userScores.createMany({
+     * // Create many UserTimes
+     * const userTimes = await prisma.userTimes.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends UserScoresCreateManyArgs>(args?: SelectSubset<T, UserScoresCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends UserTimesCreateManyArgs>(args?: SelectSubset<T, UserTimesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many UserScores and returns the data saved in the database.
-     * @param {UserScoresCreateManyAndReturnArgs} args - Arguments to create many UserScores.
+     * Create many UserTimes and returns the data saved in the database.
+     * @param {UserTimesCreateManyAndReturnArgs} args - Arguments to create many UserTimes.
      * @example
-     * // Create many UserScores
-     * const userScores = await prisma.userScores.createManyAndReturn({
+     * // Create many UserTimes
+     * const userTimes = await prisma.userTimes.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many UserScores and only return the `id`
-     * const userScoresWithIdOnly = await prisma.userScores.createManyAndReturn({
+     * // Create many UserTimes and only return the `id`
+     * const userTimesWithIdOnly = await prisma.userTimes.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2727,28 +2791,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends UserScoresCreateManyAndReturnArgs>(args?: SelectSubset<T, UserScoresCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends UserTimesCreateManyAndReturnArgs>(args?: SelectSubset<T, UserTimesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a UserScores.
-     * @param {UserScoresDeleteArgs} args - Arguments to delete one UserScores.
+     * Delete a UserTimes.
+     * @param {UserTimesDeleteArgs} args - Arguments to delete one UserTimes.
      * @example
-     * // Delete one UserScores
-     * const UserScores = await prisma.userScores.delete({
+     * // Delete one UserTimes
+     * const UserTimes = await prisma.userTimes.delete({
      *   where: {
-     *     // ... filter to delete one UserScores
+     *     // ... filter to delete one UserTimes
      *   }
      * })
      * 
      */
-    delete<T extends UserScoresDeleteArgs>(args: SelectSubset<T, UserScoresDeleteArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends UserTimesDeleteArgs>(args: SelectSubset<T, UserTimesDeleteArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one UserScores.
-     * @param {UserScoresUpdateArgs} args - Arguments to update one UserScores.
+     * Update one UserTimes.
+     * @param {UserTimesUpdateArgs} args - Arguments to update one UserTimes.
      * @example
-     * // Update one UserScores
-     * const userScores = await prisma.userScores.update({
+     * // Update one UserTimes
+     * const userTimes = await prisma.userTimes.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2758,30 +2822,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends UserScoresUpdateArgs>(args: SelectSubset<T, UserScoresUpdateArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends UserTimesUpdateArgs>(args: SelectSubset<T, UserTimesUpdateArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more UserScores.
-     * @param {UserScoresDeleteManyArgs} args - Arguments to filter UserScores to delete.
+     * Delete zero or more UserTimes.
+     * @param {UserTimesDeleteManyArgs} args - Arguments to filter UserTimes to delete.
      * @example
-     * // Delete a few UserScores
-     * const { count } = await prisma.userScores.deleteMany({
+     * // Delete a few UserTimes
+     * const { count } = await prisma.userTimes.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends UserScoresDeleteManyArgs>(args?: SelectSubset<T, UserScoresDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends UserTimesDeleteManyArgs>(args?: SelectSubset<T, UserTimesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more UserScores.
+     * Update zero or more UserTimes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {UserTimesUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many UserScores
-     * const userScores = await prisma.userScores.updateMany({
+     * // Update many UserTimes
+     * const userTimes = await prisma.userTimes.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2791,14 +2855,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends UserScoresUpdateManyArgs>(args: SelectSubset<T, UserScoresUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends UserTimesUpdateManyArgs>(args: SelectSubset<T, UserTimesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more UserScores and returns the data updated in the database.
-     * @param {UserScoresUpdateManyAndReturnArgs} args - Arguments to update many UserScores.
+     * Update zero or more UserTimes and returns the data updated in the database.
+     * @param {UserTimesUpdateManyAndReturnArgs} args - Arguments to update many UserTimes.
      * @example
-     * // Update many UserScores
-     * const userScores = await prisma.userScores.updateManyAndReturn({
+     * // Update many UserTimes
+     * const userTimes = await prisma.userTimes.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2807,8 +2871,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more UserScores and only return the `id`
-     * const userScoresWithIdOnly = await prisma.userScores.updateManyAndReturn({
+     * // Update zero or more UserTimes and only return the `id`
+     * const userTimesWithIdOnly = await prisma.userTimes.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2821,56 +2885,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends UserScoresUpdateManyAndReturnArgs>(args: SelectSubset<T, UserScoresUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends UserTimesUpdateManyAndReturnArgs>(args: SelectSubset<T, UserTimesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one UserScores.
-     * @param {UserScoresUpsertArgs} args - Arguments to update or create a UserScores.
+     * Create or update one UserTimes.
+     * @param {UserTimesUpsertArgs} args - Arguments to update or create a UserTimes.
      * @example
-     * // Update or create a UserScores
-     * const userScores = await prisma.userScores.upsert({
+     * // Update or create a UserTimes
+     * const userTimes = await prisma.userTimes.upsert({
      *   create: {
-     *     // ... data to create a UserScores
+     *     // ... data to create a UserTimes
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the UserScores we want to update
+     *     // ... the filter for the UserTimes we want to update
      *   }
      * })
      */
-    upsert<T extends UserScoresUpsertArgs>(args: SelectSubset<T, UserScoresUpsertArgs<ExtArgs>>): Prisma__UserScoresClient<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends UserTimesUpsertArgs>(args: SelectSubset<T, UserTimesUpsertArgs<ExtArgs>>): Prisma__UserTimesClient<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of UserScores.
+     * Count the number of UserTimes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresCountArgs} args - Arguments to filter UserScores to count.
+     * @param {UserTimesCountArgs} args - Arguments to filter UserTimes to count.
      * @example
-     * // Count the number of UserScores
-     * const count = await prisma.userScores.count({
+     * // Count the number of UserTimes
+     * const count = await prisma.userTimes.count({
      *   where: {
-     *     // ... the filter for the UserScores we want to count
+     *     // ... the filter for the UserTimes we want to count
      *   }
      * })
     **/
-    count<T extends UserScoresCountArgs>(
-      args?: Subset<T, UserScoresCountArgs>,
+    count<T extends UserTimesCountArgs>(
+      args?: Subset<T, UserTimesCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], UserScoresCountAggregateOutputType>
+          : GetScalarType<T['select'], UserTimesCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a UserScores.
+     * Allows you to perform aggregations operations on a UserTimes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {UserTimesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2890,13 +2954,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends UserScoresAggregateArgs>(args: Subset<T, UserScoresAggregateArgs>): Prisma.PrismaPromise<GetUserScoresAggregateType<T>>
+    aggregate<T extends UserTimesAggregateArgs>(args: Subset<T, UserTimesAggregateArgs>): Prisma.PrismaPromise<GetUserTimesAggregateType<T>>
 
     /**
-     * Group by UserScores.
+     * Group by UserTimes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserScoresGroupByArgs} args - Group by arguments.
+     * @param {UserTimesGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2911,14 +2975,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends UserScoresGroupByArgs,
+      T extends UserTimesGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserScoresGroupByArgs['orderBy'] }
-        : { orderBy?: UserScoresGroupByArgs['orderBy'] },
+        ? { orderBy: UserTimesGroupByArgs['orderBy'] }
+        : { orderBy?: UserTimesGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2967,20 +3031,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, UserScoresGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserScoresGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, UserTimesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserTimesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the UserScores model
+   * Fields of the UserTimes model
    */
-  readonly fields: UserScoresFieldRefs;
+  readonly fields: UserTimesFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for UserScores.
+   * The delegate class that acts as a "Promise-like" for UserTimes.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__UserScoresClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__UserTimesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     image<T extends ImageDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ImageDefaultArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
@@ -3010,430 +3074,434 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the UserScores model
+   * Fields of the UserTimes model
    */
-  interface UserScoresFieldRefs {
-    readonly id: FieldRef<"UserScores", 'Int'>
-    readonly startTime: FieldRef<"UserScores", 'DateTime'>
-    readonly endTime: FieldRef<"UserScores", 'DateTime'>
-    readonly userId: FieldRef<"UserScores", 'Int'>
-    readonly imageId: FieldRef<"UserScores", 'Int'>
+  interface UserTimesFieldRefs {
+    readonly id: FieldRef<"UserTimes", 'Int'>
+    readonly startTime: FieldRef<"UserTimes", 'DateTime'>
+    readonly endTime: FieldRef<"UserTimes", 'DateTime'>
+    readonly boxCornerOneX: FieldRef<"UserTimes", 'Int'>
+    readonly boxCornerOneY: FieldRef<"UserTimes", 'Int'>
+    readonly boxCornerTwoX: FieldRef<"UserTimes", 'Int'>
+    readonly boxCornerTwoY: FieldRef<"UserTimes", 'Int'>
+    readonly userId: FieldRef<"UserTimes", 'Int'>
+    readonly imageId: FieldRef<"UserTimes", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * UserScores findUnique
+   * UserTimes findUnique
    */
-  export type UserScoresFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter, which UserScores to fetch.
+     * Filter, which UserTimes to fetch.
      */
-    where: UserScoresWhereUniqueInput
+    where: UserTimesWhereUniqueInput
   }
 
   /**
-   * UserScores findUniqueOrThrow
+   * UserTimes findUniqueOrThrow
    */
-  export type UserScoresFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter, which UserScores to fetch.
+     * Filter, which UserTimes to fetch.
      */
-    where: UserScoresWhereUniqueInput
+    where: UserTimesWhereUniqueInput
   }
 
   /**
-   * UserScores findFirst
+   * UserTimes findFirst
    */
-  export type UserScoresFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter, which UserScores to fetch.
+     * Filter, which UserTimes to fetch.
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of UserScores to fetch.
+     * Determine the order of UserTimes to fetch.
      */
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for UserScores.
+     * Sets the position for searching for UserTimes.
      */
-    cursor?: UserScoresWhereUniqueInput
+    cursor?: UserTimesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` UserScores from the position of the cursor.
+     * Take `±n` UserTimes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` UserScores.
+     * Skip the first `n` UserTimes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of UserScores.
+     * Filter by unique combinations of UserTimes.
      */
-    distinct?: UserScoresScalarFieldEnum | UserScoresScalarFieldEnum[]
+    distinct?: UserTimesScalarFieldEnum | UserTimesScalarFieldEnum[]
   }
 
   /**
-   * UserScores findFirstOrThrow
+   * UserTimes findFirstOrThrow
    */
-  export type UserScoresFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter, which UserScores to fetch.
+     * Filter, which UserTimes to fetch.
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of UserScores to fetch.
+     * Determine the order of UserTimes to fetch.
      */
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for UserScores.
+     * Sets the position for searching for UserTimes.
      */
-    cursor?: UserScoresWhereUniqueInput
+    cursor?: UserTimesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` UserScores from the position of the cursor.
+     * Take `±n` UserTimes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` UserScores.
+     * Skip the first `n` UserTimes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of UserScores.
+     * Filter by unique combinations of UserTimes.
      */
-    distinct?: UserScoresScalarFieldEnum | UserScoresScalarFieldEnum[]
+    distinct?: UserTimesScalarFieldEnum | UserTimesScalarFieldEnum[]
   }
 
   /**
-   * UserScores findMany
+   * UserTimes findMany
    */
-  export type UserScoresFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter, which UserScores to fetch.
+     * Filter, which UserTimes to fetch.
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of UserScores to fetch.
+     * Determine the order of UserTimes to fetch.
      */
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing UserScores.
+     * Sets the position for listing UserTimes.
      */
-    cursor?: UserScoresWhereUniqueInput
+    cursor?: UserTimesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` UserScores from the position of the cursor.
+     * Take `±n` UserTimes from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` UserScores.
+     * Skip the first `n` UserTimes.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of UserScores.
+     * Filter by unique combinations of UserTimes.
      */
-    distinct?: UserScoresScalarFieldEnum | UserScoresScalarFieldEnum[]
+    distinct?: UserTimesScalarFieldEnum | UserTimesScalarFieldEnum[]
   }
 
   /**
-   * UserScores create
+   * UserTimes create
    */
-  export type UserScoresCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * The data needed to create a UserScores.
+     * The data needed to create a UserTimes.
      */
-    data: XOR<UserScoresCreateInput, UserScoresUncheckedCreateInput>
+    data: XOR<UserTimesCreateInput, UserTimesUncheckedCreateInput>
   }
 
   /**
-   * UserScores createMany
+   * UserTimes createMany
    */
-  export type UserScoresCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many UserScores.
+     * The data used to create many UserTimes.
      */
-    data: UserScoresCreateManyInput | UserScoresCreateManyInput[]
+    data: UserTimesCreateManyInput | UserTimesCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * UserScores createManyAndReturn
+   * UserTimes createManyAndReturn
    */
-  export type UserScoresCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelectCreateManyAndReturn<ExtArgs> | null
+    select?: UserTimesSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
-     * The data used to create many UserScores.
+     * The data used to create many UserTimes.
      */
-    data: UserScoresCreateManyInput | UserScoresCreateManyInput[]
+    data: UserTimesCreateManyInput | UserTimesCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: UserTimesIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * UserScores update
+   * UserTimes update
    */
-  export type UserScoresUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * The data needed to update a UserScores.
+     * The data needed to update a UserTimes.
      */
-    data: XOR<UserScoresUpdateInput, UserScoresUncheckedUpdateInput>
+    data: XOR<UserTimesUpdateInput, UserTimesUncheckedUpdateInput>
     /**
-     * Choose, which UserScores to update.
+     * Choose, which UserTimes to update.
      */
-    where: UserScoresWhereUniqueInput
+    where: UserTimesWhereUniqueInput
   }
 
   /**
-   * UserScores updateMany
+   * UserTimes updateMany
    */
-  export type UserScoresUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update UserScores.
+     * The data used to update UserTimes.
      */
-    data: XOR<UserScoresUpdateManyMutationInput, UserScoresUncheckedUpdateManyInput>
+    data: XOR<UserTimesUpdateManyMutationInput, UserTimesUncheckedUpdateManyInput>
     /**
-     * Filter which UserScores to update
+     * Filter which UserTimes to update
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
-     * Limit how many UserScores to update.
+     * Limit how many UserTimes to update.
      */
     limit?: number
   }
 
   /**
-   * UserScores updateManyAndReturn
+   * UserTimes updateManyAndReturn
    */
-  export type UserScoresUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: UserTimesSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
-     * The data used to update UserScores.
+     * The data used to update UserTimes.
      */
-    data: XOR<UserScoresUpdateManyMutationInput, UserScoresUncheckedUpdateManyInput>
+    data: XOR<UserTimesUpdateManyMutationInput, UserTimesUncheckedUpdateManyInput>
     /**
-     * Filter which UserScores to update
+     * Filter which UserTimes to update
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
-     * Limit how many UserScores to update.
+     * Limit how many UserTimes to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: UserTimesIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * UserScores upsert
+   * UserTimes upsert
    */
-  export type UserScoresUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * The filter to search for the UserScores to update in case it exists.
+     * The filter to search for the UserTimes to update in case it exists.
      */
-    where: UserScoresWhereUniqueInput
+    where: UserTimesWhereUniqueInput
     /**
-     * In case the UserScores found by the `where` argument doesn't exist, create a new UserScores with this data.
+     * In case the UserTimes found by the `where` argument doesn't exist, create a new UserTimes with this data.
      */
-    create: XOR<UserScoresCreateInput, UserScoresUncheckedCreateInput>
+    create: XOR<UserTimesCreateInput, UserTimesUncheckedCreateInput>
     /**
-     * In case the UserScores was found with the provided `where` argument, update it with this data.
+     * In case the UserTimes was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<UserScoresUpdateInput, UserScoresUncheckedUpdateInput>
+    update: XOR<UserTimesUpdateInput, UserTimesUncheckedUpdateInput>
   }
 
   /**
-   * UserScores delete
+   * UserTimes delete
    */
-  export type UserScoresDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
     /**
-     * Filter which UserScores to delete.
+     * Filter which UserTimes to delete.
      */
-    where: UserScoresWhereUniqueInput
+    where: UserTimesWhereUniqueInput
   }
 
   /**
-   * UserScores deleteMany
+   * UserTimes deleteMany
    */
-  export type UserScoresDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which UserScores to delete
+     * Filter which UserTimes to delete
      */
-    where?: UserScoresWhereInput
+    where?: UserTimesWhereInput
     /**
-     * Limit how many UserScores to delete.
+     * Limit how many UserTimes to delete.
      */
     limit?: number
   }
 
   /**
-   * UserScores without action
+   * UserTimes without action
    */
-  export type UserScoresDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type UserTimesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
+    include?: UserTimesInclude<ExtArgs> | null
   }
 
 
@@ -3453,18 +3521,20 @@ export namespace Prisma {
     id: number | null
     width: number | null
     height: number | null
-    x: number | null
-    y: number | null
-    length: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
   }
 
   export type ImageSumAggregateOutputType = {
     id: number | null
     width: number | null
     height: number | null
-    x: number | null
-    y: number | null
-    length: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
   }
 
   export type ImageMinAggregateOutputType = {
@@ -3472,9 +3542,10 @@ export namespace Prisma {
     filename: string | null
     width: number | null
     height: number | null
-    x: number | null
-    y: number | null
-    length: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
   }
 
   export type ImageMaxAggregateOutputType = {
@@ -3482,9 +3553,10 @@ export namespace Prisma {
     filename: string | null
     width: number | null
     height: number | null
-    x: number | null
-    y: number | null
-    length: number | null
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
   }
 
   export type ImageCountAggregateOutputType = {
@@ -3492,9 +3564,10 @@ export namespace Prisma {
     filename: number
     width: number
     height: number
-    x: number
-    y: number
-    length: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     _all: number
   }
 
@@ -3503,18 +3576,20 @@ export namespace Prisma {
     id?: true
     width?: true
     height?: true
-    x?: true
-    y?: true
-    length?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
   }
 
   export type ImageSumAggregateInputType = {
     id?: true
     width?: true
     height?: true
-    x?: true
-    y?: true
-    length?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
   }
 
   export type ImageMinAggregateInputType = {
@@ -3522,9 +3597,10 @@ export namespace Prisma {
     filename?: true
     width?: true
     height?: true
-    x?: true
-    y?: true
-    length?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
   }
 
   export type ImageMaxAggregateInputType = {
@@ -3532,9 +3608,10 @@ export namespace Prisma {
     filename?: true
     width?: true
     height?: true
-    x?: true
-    y?: true
-    length?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
   }
 
   export type ImageCountAggregateInputType = {
@@ -3542,9 +3619,10 @@ export namespace Prisma {
     filename?: true
     width?: true
     height?: true
-    x?: true
-    y?: true
-    length?: true
+    boxCornerOneX?: true
+    boxCornerOneY?: true
+    boxCornerTwoX?: true
+    boxCornerTwoY?: true
     _all?: true
   }
 
@@ -3639,9 +3717,10 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     _count: ImageCountAggregateOutputType | null
     _avg: ImageAvgAggregateOutputType | null
     _sum: ImageSumAggregateOutputType | null
@@ -3668,9 +3747,10 @@ export namespace Prisma {
     filename?: boolean
     width?: boolean
     height?: boolean
-    x?: boolean
-    y?: boolean
-    length?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
     userScores?: boolean | Image$userScoresArgs<ExtArgs>
     _count?: boolean | ImageCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["image"]>
@@ -3680,9 +3760,10 @@ export namespace Prisma {
     filename?: boolean
     width?: boolean
     height?: boolean
-    x?: boolean
-    y?: boolean
-    length?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
   }, ExtArgs["result"]["image"]>
 
   export type ImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3690,9 +3771,10 @@ export namespace Prisma {
     filename?: boolean
     width?: boolean
     height?: boolean
-    x?: boolean
-    y?: boolean
-    length?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
   }, ExtArgs["result"]["image"]>
 
   export type ImageSelectScalar = {
@@ -3700,12 +3782,13 @@ export namespace Prisma {
     filename?: boolean
     width?: boolean
     height?: boolean
-    x?: boolean
-    y?: boolean
-    length?: boolean
+    boxCornerOneX?: boolean
+    boxCornerOneY?: boolean
+    boxCornerTwoX?: boolean
+    boxCornerTwoY?: boolean
   }
 
-  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "filename" | "width" | "height" | "x" | "y" | "length", ExtArgs["result"]["image"]>
+  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "filename" | "width" | "height" | "boxCornerOneX" | "boxCornerOneY" | "boxCornerTwoX" | "boxCornerTwoY", ExtArgs["result"]["image"]>
   export type ImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     userScores?: boolean | Image$userScoresArgs<ExtArgs>
     _count?: boolean | ImageCountOutputTypeDefaultArgs<ExtArgs>
@@ -3716,16 +3799,17 @@ export namespace Prisma {
   export type $ImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Image"
     objects: {
-      userScores: Prisma.$UserScoresPayload<ExtArgs>[]
+      userScores: Prisma.$UserTimesPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       filename: string
       width: number
       height: number
-      x: number
-      y: number
-      length: number
+      boxCornerOneX: number
+      boxCornerOneY: number
+      boxCornerTwoX: number
+      boxCornerTwoY: number
     }, ExtArgs["result"]["image"]>
     composites: {}
   }
@@ -4120,7 +4204,7 @@ export namespace Prisma {
    */
   export interface Prisma__ImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    userScores<T extends Image$userScoresArgs<ExtArgs> = {}>(args?: Subset<T, Image$userScoresArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserScoresPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    userScores<T extends Image$userScoresArgs<ExtArgs> = {}>(args?: Subset<T, Image$userScoresArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserTimesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4154,9 +4238,10 @@ export namespace Prisma {
     readonly filename: FieldRef<"Image", 'String'>
     readonly width: FieldRef<"Image", 'Int'>
     readonly height: FieldRef<"Image", 'Int'>
-    readonly x: FieldRef<"Image", 'Int'>
-    readonly y: FieldRef<"Image", 'Int'>
-    readonly length: FieldRef<"Image", 'Int'>
+    readonly boxCornerOneX: FieldRef<"Image", 'Int'>
+    readonly boxCornerOneY: FieldRef<"Image", 'Int'>
+    readonly boxCornerTwoX: FieldRef<"Image", 'Int'>
+    readonly boxCornerTwoY: FieldRef<"Image", 'Int'>
   }
     
 
@@ -4554,23 +4639,23 @@ export namespace Prisma {
    */
   export type Image$userScoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the UserScores
+     * Select specific fields to fetch from the UserTimes
      */
-    select?: UserScoresSelect<ExtArgs> | null
+    select?: UserTimesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the UserScores
+     * Omit specific fields from the UserTimes
      */
-    omit?: UserScoresOmit<ExtArgs> | null
+    omit?: UserTimesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: UserScoresInclude<ExtArgs> | null
-    where?: UserScoresWhereInput
-    orderBy?: UserScoresOrderByWithRelationInput | UserScoresOrderByWithRelationInput[]
-    cursor?: UserScoresWhereUniqueInput
+    include?: UserTimesInclude<ExtArgs> | null
+    where?: UserTimesWhereInput
+    orderBy?: UserTimesOrderByWithRelationInput | UserTimesOrderByWithRelationInput[]
+    cursor?: UserTimesWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: UserScoresScalarFieldEnum | UserScoresScalarFieldEnum[]
+    distinct?: UserTimesScalarFieldEnum | UserTimesScalarFieldEnum[]
   }
 
   /**
@@ -5603,15 +5688,19 @@ export namespace Prisma {
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const UserScoresScalarFieldEnum: {
+  export const UserTimesScalarFieldEnum: {
     id: 'id',
     startTime: 'startTime',
     endTime: 'endTime',
+    boxCornerOneX: 'boxCornerOneX',
+    boxCornerOneY: 'boxCornerOneY',
+    boxCornerTwoX: 'boxCornerTwoX',
+    boxCornerTwoY: 'boxCornerTwoY',
     userId: 'userId',
     imageId: 'imageId'
   };
 
-  export type UserScoresScalarFieldEnum = (typeof UserScoresScalarFieldEnum)[keyof typeof UserScoresScalarFieldEnum]
+  export type UserTimesScalarFieldEnum = (typeof UserTimesScalarFieldEnum)[keyof typeof UserTimesScalarFieldEnum]
 
 
   export const ImageScalarFieldEnum: {
@@ -5619,9 +5708,10 @@ export namespace Prisma {
     filename: 'filename',
     width: 'width',
     height: 'height',
-    x: 'x',
-    y: 'y',
-    length: 'length'
+    boxCornerOneX: 'boxCornerOneX',
+    boxCornerOneY: 'boxCornerOneY',
+    boxCornerTwoX: 'boxCornerTwoX',
+    boxCornerTwoY: 'boxCornerTwoY'
   };
 
   export type ImageScalarFieldEnum = (typeof ImageScalarFieldEnum)[keyof typeof ImageScalarFieldEnum]
@@ -5733,7 +5823,7 @@ export namespace Prisma {
     username?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
-    userScores?: UserScoresListRelationFilter
+    userScores?: UserTimesListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -5741,7 +5831,7 @@ export namespace Prisma {
     username?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    userScores?: UserScoresOrderByRelationAggregateInput
+    userScores?: UserTimesOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -5752,7 +5842,7 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     password?: StringFilter<"User"> | string
-    userScores?: UserScoresListRelationFilter
+    userScores?: UserTimesListRelationFilter
   }, "id" | "username" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -5777,64 +5867,84 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
   }
 
-  export type UserScoresWhereInput = {
-    AND?: UserScoresWhereInput | UserScoresWhereInput[]
-    OR?: UserScoresWhereInput[]
-    NOT?: UserScoresWhereInput | UserScoresWhereInput[]
-    id?: IntFilter<"UserScores"> | number
-    startTime?: DateTimeFilter<"UserScores"> | Date | string
-    endTime?: DateTimeNullableFilter<"UserScores"> | Date | string | null
-    userId?: IntFilter<"UserScores"> | number
-    imageId?: IntFilter<"UserScores"> | number
+  export type UserTimesWhereInput = {
+    AND?: UserTimesWhereInput | UserTimesWhereInput[]
+    OR?: UserTimesWhereInput[]
+    NOT?: UserTimesWhereInput | UserTimesWhereInput[]
+    id?: IntFilter<"UserTimes"> | number
+    startTime?: DateTimeFilter<"UserTimes"> | Date | string
+    endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
+    boxCornerOneX?: IntFilter<"UserTimes"> | number
+    boxCornerOneY?: IntFilter<"UserTimes"> | number
+    boxCornerTwoX?: IntFilter<"UserTimes"> | number
+    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    userId?: IntFilter<"UserTimes"> | number
+    imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     image?: XOR<ImageScalarRelationFilter, ImageWhereInput>
   }
 
-  export type UserScoresOrderByWithRelationInput = {
+  export type UserTimesOrderByWithRelationInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
     user?: UserOrderByWithRelationInput
     image?: ImageOrderByWithRelationInput
   }
 
-  export type UserScoresWhereUniqueInput = Prisma.AtLeast<{
+  export type UserTimesWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: UserScoresWhereInput | UserScoresWhereInput[]
-    OR?: UserScoresWhereInput[]
-    NOT?: UserScoresWhereInput | UserScoresWhereInput[]
-    startTime?: DateTimeFilter<"UserScores"> | Date | string
-    endTime?: DateTimeNullableFilter<"UserScores"> | Date | string | null
-    userId?: IntFilter<"UserScores"> | number
-    imageId?: IntFilter<"UserScores"> | number
+    AND?: UserTimesWhereInput | UserTimesWhereInput[]
+    OR?: UserTimesWhereInput[]
+    NOT?: UserTimesWhereInput | UserTimesWhereInput[]
+    startTime?: DateTimeFilter<"UserTimes"> | Date | string
+    endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
+    boxCornerOneX?: IntFilter<"UserTimes"> | number
+    boxCornerOneY?: IntFilter<"UserTimes"> | number
+    boxCornerTwoX?: IntFilter<"UserTimes"> | number
+    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    userId?: IntFilter<"UserTimes"> | number
+    imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     image?: XOR<ImageScalarRelationFilter, ImageWhereInput>
   }, "id">
 
-  export type UserScoresOrderByWithAggregationInput = {
+  export type UserTimesOrderByWithAggregationInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
-    _count?: UserScoresCountOrderByAggregateInput
-    _avg?: UserScoresAvgOrderByAggregateInput
-    _max?: UserScoresMaxOrderByAggregateInput
-    _min?: UserScoresMinOrderByAggregateInput
-    _sum?: UserScoresSumOrderByAggregateInput
+    _count?: UserTimesCountOrderByAggregateInput
+    _avg?: UserTimesAvgOrderByAggregateInput
+    _max?: UserTimesMaxOrderByAggregateInput
+    _min?: UserTimesMinOrderByAggregateInput
+    _sum?: UserTimesSumOrderByAggregateInput
   }
 
-  export type UserScoresScalarWhereWithAggregatesInput = {
-    AND?: UserScoresScalarWhereWithAggregatesInput | UserScoresScalarWhereWithAggregatesInput[]
-    OR?: UserScoresScalarWhereWithAggregatesInput[]
-    NOT?: UserScoresScalarWhereWithAggregatesInput | UserScoresScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"UserScores"> | number
-    startTime?: DateTimeWithAggregatesFilter<"UserScores"> | Date | string
-    endTime?: DateTimeNullableWithAggregatesFilter<"UserScores"> | Date | string | null
-    userId?: IntWithAggregatesFilter<"UserScores"> | number
-    imageId?: IntWithAggregatesFilter<"UserScores"> | number
+  export type UserTimesScalarWhereWithAggregatesInput = {
+    AND?: UserTimesScalarWhereWithAggregatesInput | UserTimesScalarWhereWithAggregatesInput[]
+    OR?: UserTimesScalarWhereWithAggregatesInput[]
+    NOT?: UserTimesScalarWhereWithAggregatesInput | UserTimesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"UserTimes"> | number
+    startTime?: DateTimeWithAggregatesFilter<"UserTimes"> | Date | string
+    endTime?: DateTimeNullableWithAggregatesFilter<"UserTimes"> | Date | string | null
+    boxCornerOneX?: IntWithAggregatesFilter<"UserTimes"> | number
+    boxCornerOneY?: IntWithAggregatesFilter<"UserTimes"> | number
+    boxCornerTwoX?: IntWithAggregatesFilter<"UserTimes"> | number
+    boxCornerTwoY?: IntWithAggregatesFilter<"UserTimes"> | number
+    userId?: IntWithAggregatesFilter<"UserTimes"> | number
+    imageId?: IntWithAggregatesFilter<"UserTimes"> | number
   }
 
   export type ImageWhereInput = {
@@ -5845,10 +5955,11 @@ export namespace Prisma {
     filename?: StringFilter<"Image"> | string
     width?: IntFilter<"Image"> | number
     height?: IntFilter<"Image"> | number
-    x?: IntFilter<"Image"> | number
-    y?: IntFilter<"Image"> | number
-    length?: IntFilter<"Image"> | number
-    userScores?: UserScoresListRelationFilter
+    boxCornerOneX?: IntFilter<"Image"> | number
+    boxCornerOneY?: IntFilter<"Image"> | number
+    boxCornerTwoX?: IntFilter<"Image"> | number
+    boxCornerTwoY?: IntFilter<"Image"> | number
+    userScores?: UserTimesListRelationFilter
   }
 
   export type ImageOrderByWithRelationInput = {
@@ -5856,34 +5967,37 @@ export namespace Prisma {
     filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
-    userScores?: UserScoresOrderByRelationAggregateInput
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
+    userScores?: UserTimesOrderByRelationAggregateInput
   }
 
   export type ImageWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    filename?: string
     AND?: ImageWhereInput | ImageWhereInput[]
     OR?: ImageWhereInput[]
     NOT?: ImageWhereInput | ImageWhereInput[]
-    filename?: StringFilter<"Image"> | string
     width?: IntFilter<"Image"> | number
     height?: IntFilter<"Image"> | number
-    x?: IntFilter<"Image"> | number
-    y?: IntFilter<"Image"> | number
-    length?: IntFilter<"Image"> | number
-    userScores?: UserScoresListRelationFilter
-  }, "id">
+    boxCornerOneX?: IntFilter<"Image"> | number
+    boxCornerOneY?: IntFilter<"Image"> | number
+    boxCornerTwoX?: IntFilter<"Image"> | number
+    boxCornerTwoY?: IntFilter<"Image"> | number
+    userScores?: UserTimesListRelationFilter
+  }, "id" | "filename">
 
   export type ImageOrderByWithAggregationInput = {
     id?: SortOrder
     filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     _count?: ImageCountOrderByAggregateInput
     _avg?: ImageAvgOrderByAggregateInput
     _max?: ImageMaxOrderByAggregateInput
@@ -5899,9 +6013,10 @@ export namespace Prisma {
     filename?: StringWithAggregatesFilter<"Image"> | string
     width?: IntWithAggregatesFilter<"Image"> | number
     height?: IntWithAggregatesFilter<"Image"> | number
-    x?: IntWithAggregatesFilter<"Image"> | number
-    y?: IntWithAggregatesFilter<"Image"> | number
-    length?: IntWithAggregatesFilter<"Image"> | number
+    boxCornerOneX?: IntWithAggregatesFilter<"Image"> | number
+    boxCornerOneY?: IntWithAggregatesFilter<"Image"> | number
+    boxCornerTwoX?: IntWithAggregatesFilter<"Image"> | number
+    boxCornerTwoY?: IntWithAggregatesFilter<"Image"> | number
   }
 
   export type SessionWhereInput = {
@@ -5955,7 +6070,7 @@ export namespace Prisma {
     username: string
     email: string
     password: string
-    userScores?: UserScoresCreateNestedManyWithoutUserInput
+    userScores?: UserTimesCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -5963,14 +6078,14 @@ export namespace Prisma {
     username: string
     email: string
     password: string
-    userScores?: UserScoresUncheckedCreateNestedManyWithoutUserInput
+    userScores?: UserTimesUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    userScores?: UserScoresUpdateManyWithoutUserNestedInput
+    userScores?: UserTimesUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -5978,7 +6093,7 @@ export namespace Prisma {
     username?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    userScores?: UserScoresUncheckedUpdateManyWithoutUserNestedInput
+    userScores?: UserTimesUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -6001,53 +6116,81 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type UserScoresCreateInput = {
+  export type UserTimesCreateInput = {
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     user: UserCreateNestedOneWithoutUserScoresInput
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
 
-  export type UserScoresUncheckedCreateInput = {
+  export type UserTimesUncheckedCreateInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
     imageId: number
   }
 
-  export type UserScoresUpdateInput = {
+  export type UserTimesUpdateInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
-  export type UserScoresUncheckedUpdateInput = {
+  export type UserTimesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresCreateManyInput = {
+  export type UserTimesCreateManyInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
     imageId: number
   }
 
-  export type UserScoresUpdateManyMutationInput = {
+  export type UserTimesUpdateManyMutationInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresUncheckedUpdateManyInput = {
+  export type UserTimesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
@@ -6056,10 +6199,11 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
-    userScores?: UserScoresCreateNestedManyWithoutImageInput
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
+    userScores?: UserTimesCreateNestedManyWithoutImageInput
   }
 
   export type ImageUncheckedCreateInput = {
@@ -6067,20 +6211,22 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
-    userScores?: UserScoresUncheckedCreateNestedManyWithoutImageInput
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
+    userScores?: UserTimesUncheckedCreateNestedManyWithoutImageInput
   }
 
   export type ImageUpdateInput = {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
-    userScores?: UserScoresUpdateManyWithoutImageNestedInput
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    userScores?: UserTimesUpdateManyWithoutImageNestedInput
   }
 
   export type ImageUncheckedUpdateInput = {
@@ -6088,10 +6234,11 @@ export namespace Prisma {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
-    userScores?: UserScoresUncheckedUpdateManyWithoutImageNestedInput
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    userScores?: UserTimesUncheckedUpdateManyWithoutImageNestedInput
   }
 
   export type ImageCreateManyInput = {
@@ -6099,18 +6246,20 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
   }
 
   export type ImageUpdateManyMutationInput = {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
   }
 
   export type ImageUncheckedUpdateManyInput = {
@@ -6118,9 +6267,10 @@ export namespace Prisma {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
   }
 
   export type SessionCreateInput = {
@@ -6198,13 +6348,13 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type UserScoresListRelationFilter = {
-    every?: UserScoresWhereInput
-    some?: UserScoresWhereInput
-    none?: UserScoresWhereInput
+  export type UserTimesListRelationFilter = {
+    every?: UserTimesWhereInput
+    some?: UserTimesWhereInput
+    none?: UserTimesWhereInput
   }
 
-  export type UserScoresOrderByRelationAggregateInput = {
+  export type UserTimesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -6308,38 +6458,58 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type UserScoresCountOrderByAggregateInput = {
+  export type UserTimesCountOrderByAggregateInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
-  export type UserScoresAvgOrderByAggregateInput = {
+  export type UserTimesAvgOrderByAggregateInput = {
     id?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
-  export type UserScoresMaxOrderByAggregateInput = {
+  export type UserTimesMaxOrderByAggregateInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
-  export type UserScoresMinOrderByAggregateInput = {
+  export type UserTimesMinOrderByAggregateInput = {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
-  export type UserScoresSumOrderByAggregateInput = {
+  export type UserTimesSumOrderByAggregateInput = {
     id?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
@@ -6377,18 +6547,20 @@ export namespace Prisma {
     filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
   }
 
   export type ImageAvgOrderByAggregateInput = {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
   }
 
   export type ImageMaxOrderByAggregateInput = {
@@ -6396,9 +6568,10 @@ export namespace Prisma {
     filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
   }
 
   export type ImageMinOrderByAggregateInput = {
@@ -6406,18 +6579,20 @@ export namespace Prisma {
     filename?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
   }
 
   export type ImageSumOrderByAggregateInput = {
     id?: SortOrder
     width?: SortOrder
     height?: SortOrder
-    x?: SortOrder
-    y?: SortOrder
-    length?: SortOrder
+    boxCornerOneX?: SortOrder
+    boxCornerOneY?: SortOrder
+    boxCornerTwoX?: SortOrder
+    boxCornerTwoY?: SortOrder
   }
 
   export type SessionCountOrderByAggregateInput = {
@@ -6441,36 +6616,36 @@ export namespace Prisma {
     expiresAt?: SortOrder
   }
 
-  export type UserScoresCreateNestedManyWithoutUserInput = {
-    create?: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput> | UserScoresCreateWithoutUserInput[] | UserScoresUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutUserInput | UserScoresCreateOrConnectWithoutUserInput[]
-    createMany?: UserScoresCreateManyUserInputEnvelope
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
+  export type UserTimesCreateNestedManyWithoutUserInput = {
+    create?: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput> | UserTimesCreateWithoutUserInput[] | UserTimesUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutUserInput | UserTimesCreateOrConnectWithoutUserInput[]
+    createMany?: UserTimesCreateManyUserInputEnvelope
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
   }
 
-  export type UserScoresUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput> | UserScoresCreateWithoutUserInput[] | UserScoresUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutUserInput | UserScoresCreateOrConnectWithoutUserInput[]
-    createMany?: UserScoresCreateManyUserInputEnvelope
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
+  export type UserTimesUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput> | UserTimesCreateWithoutUserInput[] | UserTimesUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutUserInput | UserTimesCreateOrConnectWithoutUserInput[]
+    createMany?: UserTimesCreateManyUserInputEnvelope
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type UserScoresUpdateManyWithoutUserNestedInput = {
-    create?: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput> | UserScoresCreateWithoutUserInput[] | UserScoresUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutUserInput | UserScoresCreateOrConnectWithoutUserInput[]
-    upsert?: UserScoresUpsertWithWhereUniqueWithoutUserInput | UserScoresUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: UserScoresCreateManyUserInputEnvelope
-    set?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    disconnect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    delete?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    update?: UserScoresUpdateWithWhereUniqueWithoutUserInput | UserScoresUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: UserScoresUpdateManyWithWhereWithoutUserInput | UserScoresUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
+  export type UserTimesUpdateManyWithoutUserNestedInput = {
+    create?: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput> | UserTimesCreateWithoutUserInput[] | UserTimesUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutUserInput | UserTimesCreateOrConnectWithoutUserInput[]
+    upsert?: UserTimesUpsertWithWhereUniqueWithoutUserInput | UserTimesUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: UserTimesCreateManyUserInputEnvelope
+    set?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    disconnect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    delete?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    update?: UserTimesUpdateWithWhereUniqueWithoutUserInput | UserTimesUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: UserTimesUpdateManyWithWhereWithoutUserInput | UserTimesUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -6481,18 +6656,18 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type UserScoresUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput> | UserScoresCreateWithoutUserInput[] | UserScoresUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutUserInput | UserScoresCreateOrConnectWithoutUserInput[]
-    upsert?: UserScoresUpsertWithWhereUniqueWithoutUserInput | UserScoresUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: UserScoresCreateManyUserInputEnvelope
-    set?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    disconnect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    delete?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    update?: UserScoresUpdateWithWhereUniqueWithoutUserInput | UserScoresUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: UserScoresUpdateManyWithWhereWithoutUserInput | UserScoresUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
+  export type UserTimesUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput> | UserTimesCreateWithoutUserInput[] | UserTimesUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutUserInput | UserTimesCreateOrConnectWithoutUserInput[]
+    upsert?: UserTimesUpsertWithWhereUniqueWithoutUserInput | UserTimesUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: UserTimesCreateManyUserInputEnvelope
+    set?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    disconnect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    delete?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    update?: UserTimesUpdateWithWhereUniqueWithoutUserInput | UserTimesUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: UserTimesUpdateManyWithWhereWithoutUserInput | UserTimesUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutUserScoresInput = {
@@ -6531,46 +6706,46 @@ export namespace Prisma {
     update?: XOR<XOR<ImageUpdateToOneWithWhereWithoutUserScoresInput, ImageUpdateWithoutUserScoresInput>, ImageUncheckedUpdateWithoutUserScoresInput>
   }
 
-  export type UserScoresCreateNestedManyWithoutImageInput = {
-    create?: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput> | UserScoresCreateWithoutImageInput[] | UserScoresUncheckedCreateWithoutImageInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutImageInput | UserScoresCreateOrConnectWithoutImageInput[]
-    createMany?: UserScoresCreateManyImageInputEnvelope
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
+  export type UserTimesCreateNestedManyWithoutImageInput = {
+    create?: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput> | UserTimesCreateWithoutImageInput[] | UserTimesUncheckedCreateWithoutImageInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutImageInput | UserTimesCreateOrConnectWithoutImageInput[]
+    createMany?: UserTimesCreateManyImageInputEnvelope
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
   }
 
-  export type UserScoresUncheckedCreateNestedManyWithoutImageInput = {
-    create?: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput> | UserScoresCreateWithoutImageInput[] | UserScoresUncheckedCreateWithoutImageInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutImageInput | UserScoresCreateOrConnectWithoutImageInput[]
-    createMany?: UserScoresCreateManyImageInputEnvelope
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
+  export type UserTimesUncheckedCreateNestedManyWithoutImageInput = {
+    create?: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput> | UserTimesCreateWithoutImageInput[] | UserTimesUncheckedCreateWithoutImageInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutImageInput | UserTimesCreateOrConnectWithoutImageInput[]
+    createMany?: UserTimesCreateManyImageInputEnvelope
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
   }
 
-  export type UserScoresUpdateManyWithoutImageNestedInput = {
-    create?: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput> | UserScoresCreateWithoutImageInput[] | UserScoresUncheckedCreateWithoutImageInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutImageInput | UserScoresCreateOrConnectWithoutImageInput[]
-    upsert?: UserScoresUpsertWithWhereUniqueWithoutImageInput | UserScoresUpsertWithWhereUniqueWithoutImageInput[]
-    createMany?: UserScoresCreateManyImageInputEnvelope
-    set?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    disconnect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    delete?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    update?: UserScoresUpdateWithWhereUniqueWithoutImageInput | UserScoresUpdateWithWhereUniqueWithoutImageInput[]
-    updateMany?: UserScoresUpdateManyWithWhereWithoutImageInput | UserScoresUpdateManyWithWhereWithoutImageInput[]
-    deleteMany?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
+  export type UserTimesUpdateManyWithoutImageNestedInput = {
+    create?: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput> | UserTimesCreateWithoutImageInput[] | UserTimesUncheckedCreateWithoutImageInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutImageInput | UserTimesCreateOrConnectWithoutImageInput[]
+    upsert?: UserTimesUpsertWithWhereUniqueWithoutImageInput | UserTimesUpsertWithWhereUniqueWithoutImageInput[]
+    createMany?: UserTimesCreateManyImageInputEnvelope
+    set?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    disconnect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    delete?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    update?: UserTimesUpdateWithWhereUniqueWithoutImageInput | UserTimesUpdateWithWhereUniqueWithoutImageInput[]
+    updateMany?: UserTimesUpdateManyWithWhereWithoutImageInput | UserTimesUpdateManyWithWhereWithoutImageInput[]
+    deleteMany?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
   }
 
-  export type UserScoresUncheckedUpdateManyWithoutImageNestedInput = {
-    create?: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput> | UserScoresCreateWithoutImageInput[] | UserScoresUncheckedCreateWithoutImageInput[]
-    connectOrCreate?: UserScoresCreateOrConnectWithoutImageInput | UserScoresCreateOrConnectWithoutImageInput[]
-    upsert?: UserScoresUpsertWithWhereUniqueWithoutImageInput | UserScoresUpsertWithWhereUniqueWithoutImageInput[]
-    createMany?: UserScoresCreateManyImageInputEnvelope
-    set?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    disconnect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    delete?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    connect?: UserScoresWhereUniqueInput | UserScoresWhereUniqueInput[]
-    update?: UserScoresUpdateWithWhereUniqueWithoutImageInput | UserScoresUpdateWithWhereUniqueWithoutImageInput[]
-    updateMany?: UserScoresUpdateManyWithWhereWithoutImageInput | UserScoresUpdateManyWithWhereWithoutImageInput[]
-    deleteMany?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
+  export type UserTimesUncheckedUpdateManyWithoutImageNestedInput = {
+    create?: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput> | UserTimesCreateWithoutImageInput[] | UserTimesUncheckedCreateWithoutImageInput[]
+    connectOrCreate?: UserTimesCreateOrConnectWithoutImageInput | UserTimesCreateOrConnectWithoutImageInput[]
+    upsert?: UserTimesUpsertWithWhereUniqueWithoutImageInput | UserTimesUpsertWithWhereUniqueWithoutImageInput[]
+    createMany?: UserTimesCreateManyImageInputEnvelope
+    set?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    disconnect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    delete?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    connect?: UserTimesWhereUniqueInput | UserTimesWhereUniqueInput[]
+    update?: UserTimesUpdateWithWhereUniqueWithoutImageInput | UserTimesUpdateWithWhereUniqueWithoutImageInput[]
+    updateMany?: UserTimesUpdateManyWithWhereWithoutImageInput | UserTimesUpdateManyWithWhereWithoutImageInput[]
+    deleteMany?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -6703,54 +6878,66 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type UserScoresCreateWithoutUserInput = {
+  export type UserTimesCreateWithoutUserInput = {
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
 
-  export type UserScoresUncheckedCreateWithoutUserInput = {
+  export type UserTimesUncheckedCreateWithoutUserInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     imageId: number
   }
 
-  export type UserScoresCreateOrConnectWithoutUserInput = {
-    where: UserScoresWhereUniqueInput
-    create: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput>
+  export type UserTimesCreateOrConnectWithoutUserInput = {
+    where: UserTimesWhereUniqueInput
+    create: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput>
   }
 
-  export type UserScoresCreateManyUserInputEnvelope = {
-    data: UserScoresCreateManyUserInput | UserScoresCreateManyUserInput[]
+  export type UserTimesCreateManyUserInputEnvelope = {
+    data: UserTimesCreateManyUserInput | UserTimesCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type UserScoresUpsertWithWhereUniqueWithoutUserInput = {
-    where: UserScoresWhereUniqueInput
-    update: XOR<UserScoresUpdateWithoutUserInput, UserScoresUncheckedUpdateWithoutUserInput>
-    create: XOR<UserScoresCreateWithoutUserInput, UserScoresUncheckedCreateWithoutUserInput>
+  export type UserTimesUpsertWithWhereUniqueWithoutUserInput = {
+    where: UserTimesWhereUniqueInput
+    update: XOR<UserTimesUpdateWithoutUserInput, UserTimesUncheckedUpdateWithoutUserInput>
+    create: XOR<UserTimesCreateWithoutUserInput, UserTimesUncheckedCreateWithoutUserInput>
   }
 
-  export type UserScoresUpdateWithWhereUniqueWithoutUserInput = {
-    where: UserScoresWhereUniqueInput
-    data: XOR<UserScoresUpdateWithoutUserInput, UserScoresUncheckedUpdateWithoutUserInput>
+  export type UserTimesUpdateWithWhereUniqueWithoutUserInput = {
+    where: UserTimesWhereUniqueInput
+    data: XOR<UserTimesUpdateWithoutUserInput, UserTimesUncheckedUpdateWithoutUserInput>
   }
 
-  export type UserScoresUpdateManyWithWhereWithoutUserInput = {
-    where: UserScoresScalarWhereInput
-    data: XOR<UserScoresUpdateManyMutationInput, UserScoresUncheckedUpdateManyWithoutUserInput>
+  export type UserTimesUpdateManyWithWhereWithoutUserInput = {
+    where: UserTimesScalarWhereInput
+    data: XOR<UserTimesUpdateManyMutationInput, UserTimesUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type UserScoresScalarWhereInput = {
-    AND?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
-    OR?: UserScoresScalarWhereInput[]
-    NOT?: UserScoresScalarWhereInput | UserScoresScalarWhereInput[]
-    id?: IntFilter<"UserScores"> | number
-    startTime?: DateTimeFilter<"UserScores"> | Date | string
-    endTime?: DateTimeNullableFilter<"UserScores"> | Date | string | null
-    userId?: IntFilter<"UserScores"> | number
-    imageId?: IntFilter<"UserScores"> | number
+  export type UserTimesScalarWhereInput = {
+    AND?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
+    OR?: UserTimesScalarWhereInput[]
+    NOT?: UserTimesScalarWhereInput | UserTimesScalarWhereInput[]
+    id?: IntFilter<"UserTimes"> | number
+    startTime?: DateTimeFilter<"UserTimes"> | Date | string
+    endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
+    boxCornerOneX?: IntFilter<"UserTimes"> | number
+    boxCornerOneY?: IntFilter<"UserTimes"> | number
+    boxCornerTwoX?: IntFilter<"UserTimes"> | number
+    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    userId?: IntFilter<"UserTimes"> | number
+    imageId?: IntFilter<"UserTimes"> | number
   }
 
   export type UserCreateWithoutUserScoresInput = {
@@ -6775,9 +6962,10 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
   }
 
   export type ImageUncheckedCreateWithoutUserScoresInput = {
@@ -6785,9 +6973,10 @@ export namespace Prisma {
     filename: string
     width: number
     height: number
-    x: number
-    y: number
-    length: number
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
   }
 
   export type ImageCreateOrConnectWithoutUserScoresInput = {
@@ -6834,9 +7023,10 @@ export namespace Prisma {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
   }
 
   export type ImageUncheckedUpdateWithoutUserScoresInput = {
@@ -6844,101 +7034,142 @@ export namespace Prisma {
     filename?: StringFieldUpdateOperationsInput | string
     width?: IntFieldUpdateOperationsInput | number
     height?: IntFieldUpdateOperationsInput | number
-    x?: IntFieldUpdateOperationsInput | number
-    y?: IntFieldUpdateOperationsInput | number
-    length?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresCreateWithoutImageInput = {
+  export type UserTimesCreateWithoutImageInput = {
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     user: UserCreateNestedOneWithoutUserScoresInput
   }
 
-  export type UserScoresUncheckedCreateWithoutImageInput = {
+  export type UserTimesUncheckedCreateWithoutImageInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
   }
 
-  export type UserScoresCreateOrConnectWithoutImageInput = {
-    where: UserScoresWhereUniqueInput
-    create: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput>
+  export type UserTimesCreateOrConnectWithoutImageInput = {
+    where: UserTimesWhereUniqueInput
+    create: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput>
   }
 
-  export type UserScoresCreateManyImageInputEnvelope = {
-    data: UserScoresCreateManyImageInput | UserScoresCreateManyImageInput[]
+  export type UserTimesCreateManyImageInputEnvelope = {
+    data: UserTimesCreateManyImageInput | UserTimesCreateManyImageInput[]
     skipDuplicates?: boolean
   }
 
-  export type UserScoresUpsertWithWhereUniqueWithoutImageInput = {
-    where: UserScoresWhereUniqueInput
-    update: XOR<UserScoresUpdateWithoutImageInput, UserScoresUncheckedUpdateWithoutImageInput>
-    create: XOR<UserScoresCreateWithoutImageInput, UserScoresUncheckedCreateWithoutImageInput>
+  export type UserTimesUpsertWithWhereUniqueWithoutImageInput = {
+    where: UserTimesWhereUniqueInput
+    update: XOR<UserTimesUpdateWithoutImageInput, UserTimesUncheckedUpdateWithoutImageInput>
+    create: XOR<UserTimesCreateWithoutImageInput, UserTimesUncheckedCreateWithoutImageInput>
   }
 
-  export type UserScoresUpdateWithWhereUniqueWithoutImageInput = {
-    where: UserScoresWhereUniqueInput
-    data: XOR<UserScoresUpdateWithoutImageInput, UserScoresUncheckedUpdateWithoutImageInput>
+  export type UserTimesUpdateWithWhereUniqueWithoutImageInput = {
+    where: UserTimesWhereUniqueInput
+    data: XOR<UserTimesUpdateWithoutImageInput, UserTimesUncheckedUpdateWithoutImageInput>
   }
 
-  export type UserScoresUpdateManyWithWhereWithoutImageInput = {
-    where: UserScoresScalarWhereInput
-    data: XOR<UserScoresUpdateManyMutationInput, UserScoresUncheckedUpdateManyWithoutImageInput>
+  export type UserTimesUpdateManyWithWhereWithoutImageInput = {
+    where: UserTimesScalarWhereInput
+    data: XOR<UserTimesUpdateManyMutationInput, UserTimesUncheckedUpdateManyWithoutImageInput>
   }
 
-  export type UserScoresCreateManyUserInput = {
+  export type UserTimesCreateManyUserInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     imageId: number
   }
 
-  export type UserScoresUpdateWithoutUserInput = {
+  export type UserTimesUpdateWithoutUserInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
-  export type UserScoresUncheckedUpdateWithoutUserInput = {
+  export type UserTimesUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresUncheckedUpdateManyWithoutUserInput = {
+  export type UserTimesUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresCreateManyImageInput = {
+  export type UserTimesCreateManyImageInput = {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
+    boxCornerOneX: number
+    boxCornerOneY: number
+    boxCornerTwoX: number
+    boxCornerTwoY: number
     userId: number
   }
 
-  export type UserScoresUpdateWithoutImageInput = {
+  export type UserTimesUpdateWithoutImageInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
-  export type UserScoresUncheckedUpdateWithoutImageInput = {
+  export type UserTimesUncheckedUpdateWithoutImageInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type UserScoresUncheckedUpdateManyWithoutImageInput = {
+  export type UserTimesUncheckedUpdateManyWithoutImageInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    boxCornerOneX?: IntFieldUpdateOperationsInput | number
+    boxCornerOneY?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
+    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 

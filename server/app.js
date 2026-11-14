@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL not set");
 if (!process.env.SECRET_KEY) throw new Error("SECRET_KEY not set");

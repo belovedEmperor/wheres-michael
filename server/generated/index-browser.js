@@ -127,10 +127,14 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password'
 };
 
-exports.Prisma.UserScoresScalarFieldEnum = {
+exports.Prisma.UserTimesScalarFieldEnum = {
   id: 'id',
   startTime: 'startTime',
   endTime: 'endTime',
+  boxCornerOneX: 'boxCornerOneX',
+  boxCornerOneY: 'boxCornerOneY',
+  boxCornerTwoX: 'boxCornerTwoX',
+  boxCornerTwoY: 'boxCornerTwoY',
   userId: 'userId',
   imageId: 'imageId'
 };
@@ -140,9 +144,10 @@ exports.Prisma.ImageScalarFieldEnum = {
   filename: 'filename',
   width: 'width',
   height: 'height',
-  x: 'x',
-  y: 'y',
-  length: 'length'
+  boxCornerOneX: 'boxCornerOneX',
+  boxCornerOneY: 'boxCornerOneY',
+  boxCornerTwoX: 'boxCornerTwoX',
+  boxCornerTwoY: 'boxCornerTwoY'
 };
 
 exports.Prisma.SessionScalarFieldEnum = {
@@ -170,7 +175,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  UserScores: 'UserScores',
+  UserTimes: 'UserTimes',
   Image: 'Image',
   Session: 'Session'
 };

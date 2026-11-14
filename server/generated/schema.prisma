@@ -18,13 +18,17 @@ model User {
   email    String @unique
   password String
 
-  userScores UserScores[]
+  userScores UserTimes[]
 }
 
-model UserScores {
-  id        Int       @id @default(autoincrement())
-  startTime DateTime  @default(now())
-  endTime   DateTime?
+model UserTimes {
+  id            Int       @id @default(autoincrement())
+  startTime     DateTime  @default(now())
+  endTime       DateTime?
+  boxCornerOneX Int
+  boxCornerOneY Int
+  boxCornerTwoX Int
+  boxCornerTwoY Int
 
   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int
@@ -34,15 +38,16 @@ model UserScores {
 }
 
 model Image {
-  id       Int    @id @default(autoincrement())
-  filename String
-  width    Int
-  height   Int
-  x        Int
-  y        Int
-  length   Int
+  id            Int    @id @default(autoincrement())
+  filename      String @unique
+  width         Int
+  height        Int
+  boxCornerOneX Int
+  boxCornerOneY Int
+  boxCornerTwoX Int
+  boxCornerTwoY Int
 
-  userScores UserScores[]
+  userScores UserTimes[]
 }
 
 model Session {
