@@ -46,7 +46,7 @@ export async function getMany(req, res, next) {
     offset ? (pagination += ` OFFSET ${offset}`) : (pagination += " OFFSET 0");
     query += ` ${pagination}`;
 
-    const times = await prisma.$queryRaw`${query}`;
+    const times = await prisma.$queryRawUnsafe(query);
     return res.json(times);
   } catch (err) {
     console.error(err);
