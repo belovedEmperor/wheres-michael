@@ -81,7 +81,7 @@ export async function update(req, res, next) {
   try {
     const { guessX, guessY } = req.body;
     if (!guessX || !guessY) throw new Error("Guess coordinates not found.");
-    if (!checkGuess(Number(req.params.id), guessX, guessY))
+    if (!(await checkGuess(Number(req.params.id), guessX, guessY)))
       return res.json({ message: "Wrong guess" });
 
     const time = await prisma.userTimes.update({
