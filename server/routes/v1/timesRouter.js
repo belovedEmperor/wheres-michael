@@ -5,7 +5,7 @@ import {
   getOne,
   remove,
   update,
-} from "../../controllers/timesControllers";
+} from "../../controllers/timesControllers.js";
 import validateAuth from "../../middleware/validateAuth.js";
 import validateIsAuthorizedUser from "../../middleware/validateIsAuthorizedUser.js";
 
