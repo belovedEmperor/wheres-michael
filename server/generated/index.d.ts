@@ -2541,10 +2541,10 @@ export namespace Prisma {
     id: number
     startTime: Date
     endTime: Date | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX: number | null
+    boxCornerOneY: number | null
+    boxCornerTwoX: number | null
+    boxCornerTwoY: number | null
     userId: number
     imageId: number
     _count: UserTimesCountAggregateOutputType | null
@@ -2646,10 +2646,10 @@ export namespace Prisma {
       id: number
       startTime: Date
       endTime: Date | null
-      boxCornerOneX: number
-      boxCornerOneY: number
-      boxCornerTwoX: number
-      boxCornerTwoY: number
+      boxCornerOneX: number | null
+      boxCornerOneY: number | null
+      boxCornerTwoX: number | null
+      boxCornerTwoY: number | null
       userId: number
       imageId: number
     }, ExtArgs["result"]["userTimes"]>
@@ -5874,10 +5874,10 @@ export namespace Prisma {
     id?: IntFilter<"UserTimes"> | number
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntFilter<"UserTimes"> | number
-    boxCornerOneY?: IntFilter<"UserTimes"> | number
-    boxCornerTwoX?: IntFilter<"UserTimes"> | number
-    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -5888,10 +5888,10 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    boxCornerOneX?: SortOrderInput | SortOrder
+    boxCornerOneY?: SortOrderInput | SortOrder
+    boxCornerTwoX?: SortOrderInput | SortOrder
+    boxCornerTwoY?: SortOrderInput | SortOrder
     userId?: SortOrder
     imageId?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -5905,10 +5905,10 @@ export namespace Prisma {
     NOT?: UserTimesWhereInput | UserTimesWhereInput[]
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntFilter<"UserTimes"> | number
-    boxCornerOneY?: IntFilter<"UserTimes"> | number
-    boxCornerTwoX?: IntFilter<"UserTimes"> | number
-    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -5919,10 +5919,10 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    boxCornerOneX?: SortOrderInput | SortOrder
+    boxCornerOneY?: SortOrderInput | SortOrder
+    boxCornerTwoX?: SortOrderInput | SortOrder
+    boxCornerTwoY?: SortOrderInput | SortOrder
     userId?: SortOrder
     imageId?: SortOrder
     _count?: UserTimesCountOrderByAggregateInput
@@ -5939,10 +5939,10 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"UserTimes"> | number
     startTime?: DateTimeWithAggregatesFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableWithAggregatesFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntWithAggregatesFilter<"UserTimes"> | number
-    boxCornerOneY?: IntWithAggregatesFilter<"UserTimes"> | number
-    boxCornerTwoX?: IntWithAggregatesFilter<"UserTimes"> | number
-    boxCornerTwoY?: IntWithAggregatesFilter<"UserTimes"> | number
+    boxCornerOneX?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
+    boxCornerOneY?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
+    boxCornerTwoX?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
+    boxCornerTwoY?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
     userId?: IntWithAggregatesFilter<"UserTimes"> | number
     imageId?: IntWithAggregatesFilter<"UserTimes"> | number
   }
@@ -6119,10 +6119,10 @@ export namespace Prisma {
   export type UserTimesCreateInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     user: UserCreateNestedOneWithoutUserScoresInput
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
@@ -6131,10 +6131,10 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     userId: number
     imageId: number
   }
@@ -6142,10 +6142,10 @@ export namespace Prisma {
   export type UserTimesUpdateInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
@@ -6154,10 +6154,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
@@ -6166,10 +6166,10 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     userId: number
     imageId: number
   }
@@ -6177,20 +6177,20 @@ export namespace Prisma {
   export type UserTimesUpdateManyMutationInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type UserTimesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
@@ -6443,6 +6443,17 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -6540,6 +6551,22 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type ImageCountOrderByAggregateInput = {
@@ -6688,6 +6715,14 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type UserUpdateOneRequiredWithoutUserScoresNestedInput = {
@@ -6839,6 +6874,17 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -6867,7 +6913,7 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -6875,16 +6921,32 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type UserTimesCreateWithoutUserInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
 
@@ -6892,10 +6954,10 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     imageId: number
   }
 
@@ -6932,10 +6994,10 @@ export namespace Prisma {
     id?: IntFilter<"UserTimes"> | number
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntFilter<"UserTimes"> | number
-    boxCornerOneY?: IntFilter<"UserTimes"> | number
-    boxCornerTwoX?: IntFilter<"UserTimes"> | number
-    boxCornerTwoY?: IntFilter<"UserTimes"> | number
+    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
+    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
   }
@@ -7043,10 +7105,10 @@ export namespace Prisma {
   export type UserTimesCreateWithoutImageInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     user: UserCreateNestedOneWithoutUserScoresInput
   }
 
@@ -7054,10 +7116,10 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     userId: number
   }
 
@@ -7091,20 +7153,20 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     imageId: number
   }
 
   export type UserTimesUpdateWithoutUserInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
@@ -7112,10 +7174,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7123,10 +7185,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7134,20 +7196,20 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    boxCornerOneX?: number | null
+    boxCornerOneY?: number | null
+    boxCornerTwoX?: number | null
+    boxCornerTwoY?: number | null
     userId: number
   }
 
   export type UserTimesUpdateWithoutImageInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
@@ -7155,10 +7217,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7166,10 +7228,10 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: IntFieldUpdateOperationsInput | number
-    boxCornerOneY?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoX?: IntFieldUpdateOperationsInput | number
-    boxCornerTwoY?: IntFieldUpdateOperationsInput | number
+    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
+    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
     userId?: IntFieldUpdateOperationsInput | number
   }
 

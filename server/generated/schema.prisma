@@ -25,10 +25,10 @@ model UserTimes {
   id            Int       @id @default(autoincrement())
   startTime     DateTime  @default(now())
   endTime       DateTime?
-  boxCornerOneX Int
-  boxCornerOneY Int
-  boxCornerTwoX Int
-  boxCornerTwoY Int
+  boxCornerOneX Int?
+  boxCornerOneY Int?
+  boxCornerTwoX Int?
+  boxCornerTwoY Int?
 
   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int
