@@ -25,8 +25,8 @@ model UserTimes {
   id        Int       @id @default(autoincrement())
   startTime DateTime  @default(now())
   endTime   DateTime?
-  guessX    Int
-  guessY    Int
+  guessX    Int?
+  guessY    Int?
 
   user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId Int

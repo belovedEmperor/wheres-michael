@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "UserTimes" ALTER COLUMN "guessX" DROP NOT NULL,
+ALTER COLUMN "guessY" DROP NOT NULL;
