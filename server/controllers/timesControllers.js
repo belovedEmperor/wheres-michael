@@ -57,7 +57,9 @@ export async function getMany(req, res, next) {
 export async function create(req, res, next) {
   try {
     const { userId, imageId } = req.body;
-    const time = await prisma.userTimes.create({ data: { userId, imageId } });
+    const time = await prisma.userTimes.create({
+      data: { userId: Number(userId), imageId: Number(imageId) },
+    });
     return res.status(201).json(time);
   } catch (err) {
     console.error(err);
@@ -76,10 +78,10 @@ export async function update(req, res, next) {
       where: { id: Number(req.params.id) },
       data: {
         endTime: new Date(),
-        boxCornerOneX,
-        boxCornerOneY,
-        boxCornerTwoX,
-        boxCornerTwoY,
+        boxCornerOneX: Number(boxCornerOneX),
+        boxCornerOneY: Number(boxCornerOneY),
+        boxCornerTwoX: Number(boxCornerTwoX),
+        boxCornerTwoY: Number(boxCornerTwoY),
       },
     });
     return res.json(time);
