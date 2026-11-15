@@ -131,10 +131,8 @@ exports.Prisma.UserTimesScalarFieldEnum = {
   id: 'id',
   startTime: 'startTime',
   endTime: 'endTime',
-  boxCornerOneX: 'boxCornerOneX',
-  boxCornerOneY: 'boxCornerOneY',
-  boxCornerTwoX: 'boxCornerTwoX',
-  boxCornerTwoY: 'boxCornerTwoY',
+  guessX: 'guessX',
+  guessY: 'guessY',
   userId: 'userId',
   imageId: 'imageId'
 };

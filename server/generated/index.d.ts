@@ -2338,20 +2338,16 @@ export namespace Prisma {
 
   export type UserTimesAvgAggregateOutputType = {
     id: number | null
-    boxCornerOneX: number | null
-    boxCornerOneY: number | null
-    boxCornerTwoX: number | null
-    boxCornerTwoY: number | null
+    guessX: number | null
+    guessY: number | null
     userId: number | null
     imageId: number | null
   }
 
   export type UserTimesSumAggregateOutputType = {
     id: number | null
-    boxCornerOneX: number | null
-    boxCornerOneY: number | null
-    boxCornerTwoX: number | null
-    boxCornerTwoY: number | null
+    guessX: number | null
+    guessY: number | null
     userId: number | null
     imageId: number | null
   }
@@ -2360,10 +2356,8 @@ export namespace Prisma {
     id: number | null
     startTime: Date | null
     endTime: Date | null
-    boxCornerOneX: number | null
-    boxCornerOneY: number | null
-    boxCornerTwoX: number | null
-    boxCornerTwoY: number | null
+    guessX: number | null
+    guessY: number | null
     userId: number | null
     imageId: number | null
   }
@@ -2372,10 +2366,8 @@ export namespace Prisma {
     id: number | null
     startTime: Date | null
     endTime: Date | null
-    boxCornerOneX: number | null
-    boxCornerOneY: number | null
-    boxCornerTwoX: number | null
-    boxCornerTwoY: number | null
+    guessX: number | null
+    guessY: number | null
     userId: number | null
     imageId: number | null
   }
@@ -2384,10 +2376,8 @@ export namespace Prisma {
     id: number
     startTime: number
     endTime: number
-    boxCornerOneX: number
-    boxCornerOneY: number
-    boxCornerTwoX: number
-    boxCornerTwoY: number
+    guessX: number
+    guessY: number
     userId: number
     imageId: number
     _all: number
@@ -2396,20 +2386,16 @@ export namespace Prisma {
 
   export type UserTimesAvgAggregateInputType = {
     id?: true
-    boxCornerOneX?: true
-    boxCornerOneY?: true
-    boxCornerTwoX?: true
-    boxCornerTwoY?: true
+    guessX?: true
+    guessY?: true
     userId?: true
     imageId?: true
   }
 
   export type UserTimesSumAggregateInputType = {
     id?: true
-    boxCornerOneX?: true
-    boxCornerOneY?: true
-    boxCornerTwoX?: true
-    boxCornerTwoY?: true
+    guessX?: true
+    guessY?: true
     userId?: true
     imageId?: true
   }
@@ -2418,10 +2404,8 @@ export namespace Prisma {
     id?: true
     startTime?: true
     endTime?: true
-    boxCornerOneX?: true
-    boxCornerOneY?: true
-    boxCornerTwoX?: true
-    boxCornerTwoY?: true
+    guessX?: true
+    guessY?: true
     userId?: true
     imageId?: true
   }
@@ -2430,10 +2414,8 @@ export namespace Prisma {
     id?: true
     startTime?: true
     endTime?: true
-    boxCornerOneX?: true
-    boxCornerOneY?: true
-    boxCornerTwoX?: true
-    boxCornerTwoY?: true
+    guessX?: true
+    guessY?: true
     userId?: true
     imageId?: true
   }
@@ -2442,10 +2424,8 @@ export namespace Prisma {
     id?: true
     startTime?: true
     endTime?: true
-    boxCornerOneX?: true
-    boxCornerOneY?: true
-    boxCornerTwoX?: true
-    boxCornerTwoY?: true
+    guessX?: true
+    guessY?: true
     userId?: true
     imageId?: true
     _all?: true
@@ -2541,10 +2521,8 @@ export namespace Prisma {
     id: number
     startTime: Date
     endTime: Date | null
-    boxCornerOneX: number | null
-    boxCornerOneY: number | null
-    boxCornerTwoX: number | null
-    boxCornerTwoY: number | null
+    guessX: number
+    guessY: number
     userId: number
     imageId: number
     _count: UserTimesCountAggregateOutputType | null
@@ -2572,10 +2550,8 @@ export namespace Prisma {
     id?: boolean
     startTime?: boolean
     endTime?: boolean
-    boxCornerOneX?: boolean
-    boxCornerOneY?: boolean
-    boxCornerTwoX?: boolean
-    boxCornerTwoY?: boolean
+    guessX?: boolean
+    guessY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2586,10 +2562,8 @@ export namespace Prisma {
     id?: boolean
     startTime?: boolean
     endTime?: boolean
-    boxCornerOneX?: boolean
-    boxCornerOneY?: boolean
-    boxCornerTwoX?: boolean
-    boxCornerTwoY?: boolean
+    guessX?: boolean
+    guessY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2600,10 +2574,8 @@ export namespace Prisma {
     id?: boolean
     startTime?: boolean
     endTime?: boolean
-    boxCornerOneX?: boolean
-    boxCornerOneY?: boolean
-    boxCornerTwoX?: boolean
-    boxCornerTwoY?: boolean
+    guessX?: boolean
+    guessY?: boolean
     userId?: boolean
     imageId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -2614,15 +2586,13 @@ export namespace Prisma {
     id?: boolean
     startTime?: boolean
     endTime?: boolean
-    boxCornerOneX?: boolean
-    boxCornerOneY?: boolean
-    boxCornerTwoX?: boolean
-    boxCornerTwoY?: boolean
+    guessX?: boolean
+    guessY?: boolean
     userId?: boolean
     imageId?: boolean
   }
 
-  export type UserTimesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "boxCornerOneX" | "boxCornerOneY" | "boxCornerTwoX" | "boxCornerTwoY" | "userId" | "imageId", ExtArgs["result"]["userTimes"]>
+  export type UserTimesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "guessX" | "guessY" | "userId" | "imageId", ExtArgs["result"]["userTimes"]>
   export type UserTimesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     image?: boolean | ImageDefaultArgs<ExtArgs>
@@ -2646,10 +2616,8 @@ export namespace Prisma {
       id: number
       startTime: Date
       endTime: Date | null
-      boxCornerOneX: number | null
-      boxCornerOneY: number | null
-      boxCornerTwoX: number | null
-      boxCornerTwoY: number | null
+      guessX: number
+      guessY: number
       userId: number
       imageId: number
     }, ExtArgs["result"]["userTimes"]>
@@ -3080,10 +3048,8 @@ export namespace Prisma {
     readonly id: FieldRef<"UserTimes", 'Int'>
     readonly startTime: FieldRef<"UserTimes", 'DateTime'>
     readonly endTime: FieldRef<"UserTimes", 'DateTime'>
-    readonly boxCornerOneX: FieldRef<"UserTimes", 'Int'>
-    readonly boxCornerOneY: FieldRef<"UserTimes", 'Int'>
-    readonly boxCornerTwoX: FieldRef<"UserTimes", 'Int'>
-    readonly boxCornerTwoY: FieldRef<"UserTimes", 'Int'>
+    readonly guessX: FieldRef<"UserTimes", 'Int'>
+    readonly guessY: FieldRef<"UserTimes", 'Int'>
     readonly userId: FieldRef<"UserTimes", 'Int'>
     readonly imageId: FieldRef<"UserTimes", 'Int'>
   }
@@ -5692,10 +5658,8 @@ export namespace Prisma {
     id: 'id',
     startTime: 'startTime',
     endTime: 'endTime',
-    boxCornerOneX: 'boxCornerOneX',
-    boxCornerOneY: 'boxCornerOneY',
-    boxCornerTwoX: 'boxCornerTwoX',
-    boxCornerTwoY: 'boxCornerTwoY',
+    guessX: 'guessX',
+    guessY: 'guessY',
     userId: 'userId',
     imageId: 'imageId'
   };
@@ -5874,10 +5838,8 @@ export namespace Prisma {
     id?: IntFilter<"UserTimes"> | number
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
+    guessX?: IntFilter<"UserTimes"> | number
+    guessY?: IntFilter<"UserTimes"> | number
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -5888,10 +5850,8 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
-    boxCornerOneX?: SortOrderInput | SortOrder
-    boxCornerOneY?: SortOrderInput | SortOrder
-    boxCornerTwoX?: SortOrderInput | SortOrder
-    boxCornerTwoY?: SortOrderInput | SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
     user?: UserOrderByWithRelationInput
@@ -5905,10 +5865,8 @@ export namespace Prisma {
     NOT?: UserTimesWhereInput | UserTimesWhereInput[]
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
+    guessX?: IntFilter<"UserTimes"> | number
+    guessY?: IntFilter<"UserTimes"> | number
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -5919,10 +5877,8 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrderInput | SortOrder
-    boxCornerOneX?: SortOrderInput | SortOrder
-    boxCornerOneY?: SortOrderInput | SortOrder
-    boxCornerTwoX?: SortOrderInput | SortOrder
-    boxCornerTwoY?: SortOrderInput | SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
     _count?: UserTimesCountOrderByAggregateInput
@@ -5939,10 +5895,8 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"UserTimes"> | number
     startTime?: DateTimeWithAggregatesFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableWithAggregatesFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
-    boxCornerOneY?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
-    boxCornerTwoX?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
-    boxCornerTwoY?: IntNullableWithAggregatesFilter<"UserTimes"> | number | null
+    guessX?: IntWithAggregatesFilter<"UserTimes"> | number
+    guessY?: IntWithAggregatesFilter<"UserTimes"> | number
     userId?: IntWithAggregatesFilter<"UserTimes"> | number
     imageId?: IntWithAggregatesFilter<"UserTimes"> | number
   }
@@ -6119,10 +6073,8 @@ export namespace Prisma {
   export type UserTimesCreateInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     user: UserCreateNestedOneWithoutUserScoresInput
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
@@ -6131,10 +6083,8 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     userId: number
     imageId: number
   }
@@ -6142,10 +6092,8 @@ export namespace Prisma {
   export type UserTimesUpdateInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
@@ -6154,10 +6102,8 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
@@ -6166,10 +6112,8 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     userId: number
     imageId: number
   }
@@ -6177,20 +6121,16 @@ export namespace Prisma {
   export type UserTimesUpdateManyMutationInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserTimesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
@@ -6443,17 +6383,6 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -6473,20 +6402,16 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
   export type UserTimesAvgOrderByAggregateInput = {
     id?: SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
@@ -6495,10 +6420,8 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
@@ -6507,20 +6430,16 @@ export namespace Prisma {
     id?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
 
   export type UserTimesSumOrderByAggregateInput = {
     id?: SortOrder
-    boxCornerOneX?: SortOrder
-    boxCornerOneY?: SortOrder
-    boxCornerTwoX?: SortOrder
-    boxCornerTwoY?: SortOrder
+    guessX?: SortOrder
+    guessY?: SortOrder
     userId?: SortOrder
     imageId?: SortOrder
   }
@@ -6551,22 +6470,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type ImageCountOrderByAggregateInput = {
@@ -6715,14 +6618,6 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type UserUpdateOneRequiredWithoutUserScoresNestedInput = {
@@ -6874,17 +6769,6 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -6913,7 +6797,7 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -6921,32 +6805,14 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type UserTimesCreateWithoutUserInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     image: ImageCreateNestedOneWithoutUserScoresInput
   }
 
@@ -6954,10 +6820,8 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     imageId: number
   }
 
@@ -6994,10 +6858,8 @@ export namespace Prisma {
     id?: IntFilter<"UserTimes"> | number
     startTime?: DateTimeFilter<"UserTimes"> | Date | string
     endTime?: DateTimeNullableFilter<"UserTimes"> | Date | string | null
-    boxCornerOneX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerOneY?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoX?: IntNullableFilter<"UserTimes"> | number | null
-    boxCornerTwoY?: IntNullableFilter<"UserTimes"> | number | null
+    guessX?: IntFilter<"UserTimes"> | number
+    guessY?: IntFilter<"UserTimes"> | number
     userId?: IntFilter<"UserTimes"> | number
     imageId?: IntFilter<"UserTimes"> | number
   }
@@ -7105,10 +6967,8 @@ export namespace Prisma {
   export type UserTimesCreateWithoutImageInput = {
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     user: UserCreateNestedOneWithoutUserScoresInput
   }
 
@@ -7116,10 +6976,8 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     userId: number
   }
 
@@ -7153,20 +7011,16 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     imageId: number
   }
 
   export type UserTimesUpdateWithoutUserInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     image?: ImageUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
@@ -7174,10 +7028,8 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7185,10 +7037,8 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     imageId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7196,20 +7046,16 @@ export namespace Prisma {
     id?: number
     startTime?: Date | string
     endTime?: Date | string | null
-    boxCornerOneX?: number | null
-    boxCornerOneY?: number | null
-    boxCornerTwoX?: number | null
-    boxCornerTwoY?: number | null
+    guessX: number
+    guessY: number
     userId: number
   }
 
   export type UserTimesUpdateWithoutImageInput = {
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutUserScoresNestedInput
   }
 
@@ -7217,10 +7063,8 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7228,10 +7072,8 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    boxCornerOneX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerOneY?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoX?: NullableIntFieldUpdateOperationsInput | number | null
-    boxCornerTwoY?: NullableIntFieldUpdateOperationsInput | number | null
+    guessX?: IntFieldUpdateOperationsInput | number
+    guessY?: IntFieldUpdateOperationsInput | number
     userId?: IntFieldUpdateOperationsInput | number
   }
 

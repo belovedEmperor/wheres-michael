@@ -67,21 +67,29 @@ export async function create(req, res, next) {
   }
 }
 
+async function checkGuess(id, x, y) {
+  const image = await prisma.image.findUnique({ where: { id: id } });
+  if (
+    image.boxCornerOneX <= x <= image.boxCornerTwoX &&
+    image.boxCornerOneY <= y <= image.boxCornerTwoY
+  )
+    return true;
+  else return false;
+}
+
 export async function update(req, res, next) {
   try {
-    const { boxCornerOneX, boxCornerOneY, boxCornerTwoX, boxCornerTwoY } =
-      req.body;
-    if (!boxCornerOneX && !boxCornerOneY && !boxCornerTwoX && !boxCornerTwoY)
-      throw new Error("All box corners not found.");
+    const { guessX, guessY } = req.body;
+    if (!guessX || !guessY) throw new Error("Guess coordinates not found.");
+    if (!checkGuess(Number(req.params.id), guessX, guessY))
+      return res.json({ message: "Wrong guess" });
 
     const time = await prisma.userTimes.update({
       where: { id: Number(req.params.id) },
       data: {
         endTime: new Date(),
-        boxCornerOneX: Number(boxCornerOneX),
-        boxCornerOneY: Number(boxCornerOneY),
-        boxCornerTwoX: Number(boxCornerTwoX),
-        boxCornerTwoY: Number(boxCornerTwoY),
+        guessX: Number(guessX),
+        guessY: Number(guessY),
       },
     });
     return res.json(time);
