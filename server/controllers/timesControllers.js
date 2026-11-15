@@ -13,40 +13,18 @@ export async function getOne(req, res, next) {
 }
 
 export async function getMany(req, res, next) {
+  const { userId, imageId, sort, limit, offset } = req.query;
+  const order = sort?.toLowerCase() === "desc" ? "desc" : "asc";
   try {
-    const { userId, imageId, sort, limit, offset } = req.query;
-
-    let query = 'SELECT * FROM "UserTimes"';
-
-    let whereArray = [];
-    userId && whereArray.push(`userId = ${userId}`);
-    imageId && whereArray.push(`imageId = ${imageId}`);
-    if (whereArray.length > 0) {
-      query += ` WHERE ${whereArray.join(" AND ")}`;
-    }
-
-    let orderBy = "";
-    if (sort) {
-      switch (sort.toLowerCase()) {
-        case "descending":
-          orderBy = "DESC";
-          break;
-        case "ascending":
-          orderBy = "ASC";
-          break;
-        default:
-          break;
-      }
-    }
-    if (orderBy != "")
-      query += ` ORDER BY ("endTime" - "startTime") ${orderBy} NULLS LAST`;
-
-    let pagination = "";
-    limit ? (pagination += `LIMIT ${limit}`) : (pagination += "LIMIT 20");
-    offset ? (pagination += ` OFFSET ${offset}`) : (pagination += " OFFSET 0");
-    query += ` ${pagination}`;
-
-    const times = await prisma.$queryRawUnsafe(query);
+    const times = await prisma.userTimes.findMany({
+      where: {
+        userId: userId ? Number(userId) : undefined,
+        imageId: imageId ? Number(imageId) : undefined,
+      },
+      orderBy: sort ? { durationMs: order, nulls: "last" } : undefined,
+      take: Number(limit) || 20,
+      skip: Number(offset) || 0,
+    });
     return res.json(times);
   } catch (err) {
     console.error(err);
@@ -67,11 +45,15 @@ export async function create(req, res, next) {
   }
 }
 
-async function checkGuess(id, x, y) {
-  const image = await prisma.image.findUnique({ where: { id: id } });
+async function checkGuess(req, x, y) {
+  const image = await prisma.image.findUnique({
+    where: { id: req.time.imageId },
+  });
   if (
-    image.boxCornerOneX <= x <= image.boxCornerTwoX &&
-    image.boxCornerOneY <= y <= image.boxCornerTwoY
+    image.boxCornerOneX <= x &&
+    x <= image.boxCornerTwoX &&
+    image.boxCornerOneY <= y &&
+    y <= image.boxCornerTwoY
   )
     return true;
   else return false;
@@ -81,13 +63,15 @@ export async function update(req, res, next) {
   try {
     const { guessX, guessY } = req.body;
     if (!guessX || !guessY) throw new Error("Guess coordinates not found.");
-    if (!(await checkGuess(Number(req.params.id), guessX, guessY)))
+    if (!(await checkGuess(req, guessX, guessY)))
       return res.json({ message: "Wrong guess" });
 
+    const endTime = new Date();
     const time = await prisma.userTimes.update({
       where: { id: Number(req.params.id) },
       data: {
-        endTime: new Date(),
+        endTime,
+        durationMs: endTime - new Date(req.time.startTime),
         guessX: Number(guessX),
         guessY: Number(guessY),
       },

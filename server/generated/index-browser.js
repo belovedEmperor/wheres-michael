@@ -131,6 +131,7 @@ exports.Prisma.UserTimesScalarFieldEnum = {
   id: 'id',
   startTime: 'startTime',
   endTime: 'endTime',
+  durationMs: 'durationMs',
   guessX: 'guessX',
   guessY: 'guessY',
   userId: 'userId',

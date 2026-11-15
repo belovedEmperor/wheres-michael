@@ -25,6 +25,7 @@ model UserTimes {
   id            Int       @id @default(autoincrement())
   startTime     DateTime  @default(now())
   endTime       DateTime?
+  durationMs    Int?
   guessX  Int?
   guessY Int?
 
