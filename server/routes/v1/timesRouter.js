@@ -7,14 +7,14 @@ import {
   update,
 } from "../../controllers/timesControllers.js";
 import validateAuth from "../../middleware/validateAuth.js";
-import validateIsAuthorizedUser from "../../middleware/validateIsAuthorizedUser.js";
+import validateTimeIsUsers from "../../middleware/validateIsAuthorizedUser.js";
 
 const router = Router();
 
 router.get("/", getMany);
 router.get("/:id", getOne);
 router.post("/", validateAuth, create);
-router.patch("/:id", validateAuth, validateIsAuthorizedUser, update);
-router.delete("/:id", validateAuth, validateIsAuthorizedUser, remove);
+router.patch("/:id", validateAuth, validateTimeIsUsers, update);
+router.delete("/:id", validateAuth, validateTimeIsUsers, remove);
 
 export default router;
