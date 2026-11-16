@@ -1,45 +1,139 @@
 import bcrypt from "bcryptjs";
 import { prisma } from "../lib/prisma.js";
 import passport from "passport";
+import { body, validationResult, matchedData } from "express-validator";
 
-export async function register(req, res, next) {
-  try {
-    const hashedPassword = await bcrypt.hash(
-      req.body.password,
-      Number(process.env.SALT_LENGTH),
-    );
+const emptyErr = "must not be empty.";
+const alphaErr = "must be alphabetical.";
+const whitespaceErr = "must not contain whitespace.";
+const passwordLengthErr = "must be between or equal to 8 and 25 characters.";
 
-    const data = {
-      username: req.body.username.trim(),
-      email: req.body.email.trim().toLowerCase(),
-      password: hashedPassword,
-    };
+const whitespaceValidator = (value) => {
+  return value.includes(" ") ? false : true;
+};
 
-    const user = await prisma.user.create({ data, omit: { password: true } });
+const validateLoginInfo = [
+  body("email").trim().notEmpty().withMessage(`Email ${emptyErr}`),
+  body("email")
+    .custom(whitespaceValidator)
+    .withMessage(`Email ${whitespaceErr}`),
+  body("email").trim().isEmail().withMessage(`Email must be valid.`),
+  body("password").trim().notEmpty().withMessage(`Password ${emptyErr}`),
+  body("password")
+    .isLength({ min: 8, max: 25 })
+    .withMessage(`Password ${passwordLengthErr}`),
+  body("password")
+    .custom(whitespaceValidator)
+    .withMessage(`Password ${whitespaceErr}`),
+  body("password")
+    .isStrongPassword({ minLowercase: 1, minUppercase: 1 })
+    .withMessage(
+      `Password must have at least 1 lowercase and 1 uppercase letter.`,
+    ),
+  body("password")
+    .isStrongPassword({ minNumbers: 1 })
+    .withMessage(`Password must have at least 1 number.`),
+  body("password")
+    .isStrongPassword({ minSymbols: 1 })
+    .withMessage(`Password must have at least 1 symbol.`),
+];
 
-    return req.login(user, (err) => {
+const validateAccountInfo = [
+  ...validateLoginInfo,
+  body("username").trim().notEmpty().withMessage(`Username ${emptyErr}`),
+  body("username").trim().isAlpha().withMessage(`Username ${alphaErr}`),
+];
+
+const validateUpdateInfo = [
+  body("email")
+    .optional({ checkFalsy: true })
+    .trim()
+    .isEmail()
+    .withMessage("Email must be valid."),
+  body("password")
+    .optional({ checkFalsy: true })
+    .isLength({ min: 8, max: 25 })
+    .withMessage(`Password ${passwordLengthErr}`)
+    .custom(whitespaceValidator)
+    .withMessage(`Password ${whitespaceErr}`),
+  body("username")
+    .optional({ checkFalsy: true })
+    .trim()
+    .isAlpha()
+    .withMessage(`Username ${alphaErr}`),
+];
+
+const validateRegisterInfo = [
+  ...validateAccountInfo,
+  body("confirmPassword")
+    .trim()
+    .notEmpty()
+    .withMessage(`Password confirmation ${emptyErr}`),
+  body("confirmPassword")
+    .custom(whitespaceValidator)
+    .withMessage(`Password confirmation ${whitespaceErr}`),
+  body("confirmPassword")
+    .custom((value, { req }) => {
+      return value === req.body.password;
+    })
+    .withMessage(`Password confirmation must match password.`),
+];
+
+export const register = [
+  validateRegisterInfo,
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const { username, email, password } = matchedData(req);
+      const hashedPassword = await bcrypt.hash(
+        password,
+        Number(process.env.SALT_LENGTH),
+      );
+
+      const data = {
+        username: username.trim(),
+        email: email.trim().toLowerCase(),
+        password: hashedPassword,
+      };
+
+      const user = await prisma.user.create({ data, omit: { password: true } });
+
+      return req.login(user, (err) => {
+        if (err) return next(err);
+        res.status(201).json(user);
+      });
+    } catch (err) {
+      console.error(err);
+      next(err);
+    }
+  },
+];
+
+export const login = [
+  validateLoginInfo,
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    passport.authenticate("local", (err, user, info) => {
       if (err) return next(err);
-      res.status(201).json(user);
-    });
-  } catch (err) {
-    console.error(err);
-    next(err);
-  }
-}
-
-export function login(req, res, next) {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) return next(err);
-    if (!user)
-      return res
-        .status(401)
-        .json({ message: info?.message || "Incorrect email or password." });
-    req.login(user, (err) => {
-      if (err) return next(err);
-      res.json({ id: user.id, email: user.email, username: user.username });
-    });
-  })(req, res, next);
-}
+      if (!user)
+        return res
+          .status(401)
+          .json({ message: info?.message || "Incorrect email or password." });
+      req.login(user, (err) => {
+        if (err) return next(err);
+        res.json({ id: user.id, email: user.email, username: user.username });
+      });
+    })(req, res, next);
+  },
+];
 
 export function logout(req, res, next) {
   req.logout((err) => {
@@ -61,28 +155,37 @@ export async function get(req, res, next) {
   }
 }
 
-export async function update(req, res, next) {
-  try {
-    const data = {};
-    if (req.body.username) data.username = req.body.username;
-    if (req.body.email) data.email = req.body.email;
-    if (req.body.password)
-      data.password = await bcrypt.hash(
-        req.body.password,
-        Number(process.env.SALT_LENGTH),
-      );
+export const update = [
+  validateUpdateInfo,
+  async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-    const user = await prisma.user.update({
-      where: { id: req.user.id },
-      data,
-      omit: { password: true },
-    });
-    res.json(user);
-  } catch (err) {
-    console.error(err);
-    next(err);
-  }
-}
+    try {
+      const { username, email, password } = matchedData(req);
+      const data = {};
+      if (username) data.username = username;
+      if (email) data.email = email;
+      if (password)
+        data.password = await bcrypt.hash(
+          password,
+          Number(process.env.SALT_LENGTH),
+        );
+
+      const user = await prisma.user.update({
+        where: { id: req.user.id },
+        data,
+        omit: { password: true },
+      });
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      next(err);
+    }
+  },
+];
 
 export async function remove(req, res, next) {
   try {
