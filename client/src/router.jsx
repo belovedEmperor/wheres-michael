@@ -1,5 +1,6 @@
 import App from "./App";
 import RegisterForm from "./components/RegisterForm";
+import LoginForm from "./components/LoginForm";
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
       {
         path: "register",
         element: <RegisterForm />,
+      },
+      {
+        path: "login",
+        element: <LoginForm />,
       },
     ],
   },
