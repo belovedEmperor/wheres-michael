@@ -12,42 +12,61 @@ const whitespaceValidator = (value) => {
   return value.includes(" ") ? false : true;
 };
 
+async function checkNoExistingUsername(value) {
+  const user = await prisma.user.findUnique({ where: { username: value } });
+  if (user) throw new Error("Username already in use.");
+}
+
+async function checkNoExistingEmail(value) {
+  const user = await prisma.user.findUnique({ where: { email: value } });
+  if (user) throw new Error("Email already in use.");
+}
+
 const validateLoginInfo = [
-  body("email").trim().notEmpty().withMessage(`Email ${emptyErr}`),
   body("email")
+    .trim()
+    .toLowerCase()
+    .notEmpty()
+    .withMessage(`Email ${emptyErr}`)
     .custom(whitespaceValidator)
-    .withMessage(`Email ${whitespaceErr}`),
-  body("email").trim().isEmail().withMessage(`Email must be valid.`),
-  body("password").trim().notEmpty().withMessage(`Password ${emptyErr}`),
+    .withMessage(`Email ${whitespaceErr}`)
+    .isEmail()
+    .withMessage(`Email must be valid.`),
   body("password")
+    .trim()
+    .notEmpty()
+    .withMessage(`Password ${emptyErr}`)
     .isLength({ min: 8, max: 25 })
-    .withMessage(`Password ${passwordLengthErr}`),
-  body("password")
+    .withMessage(`Password ${passwordLengthErr}`)
     .custom(whitespaceValidator)
-    .withMessage(`Password ${whitespaceErr}`),
-  body("password")
+    .withMessage(`Password ${whitespaceErr}`)
     .isStrongPassword({ minLowercase: 1, minUppercase: 1 })
     .withMessage(
       `Password must have at least 1 lowercase and 1 uppercase letter.`,
-    ),
-  body("password")
+    )
     .isStrongPassword({ minNumbers: 1 })
-    .withMessage(`Password must have at least 1 number.`),
-  body("password")
+    .withMessage(`Password must have at least 1 number.`)
     .isStrongPassword({ minSymbols: 1 })
     .withMessage(`Password must have at least 1 symbol.`),
 ];
 
 const validateAccountInfo = [
   ...validateLoginInfo,
-  body("username").trim().notEmpty().withMessage(`Username ${emptyErr}`),
-  body("username").trim().isAlpha().withMessage(`Username ${alphaErr}`),
+  body("username")
+    .trim()
+    .notEmpty()
+    .withMessage(`Username ${emptyErr}`)
+    .isAlpha()
+    .withMessage(`Username ${alphaErr}`)
+    .custom(checkNoExistingUsername)
+    .withMessage("Username already in use."),
 ];
 
 const validateUpdateInfo = [
   body("email")
     .optional({ checkFalsy: true })
     .trim()
+    .toLowerCase()
     .isEmail()
     .withMessage("Email must be valid."),
   body("password")
@@ -60,19 +79,24 @@ const validateUpdateInfo = [
     .optional({ checkFalsy: true })
     .trim()
     .isAlpha()
-    .withMessage(`Username ${alphaErr}`),
+    .withMessage(`Username ${alphaErr}`)
+    .custom(checkNoExistingUsername)
+    .withMessage("Username already in use."),
 ];
 
 const validateRegisterInfo = [
   ...validateAccountInfo,
+  body("email")
+    .trim()
+    .toLowerCase()
+    .custom(checkNoExistingEmail)
+    .withMessage("Email already in use."),
   body("confirmPassword")
     .trim()
     .notEmpty()
-    .withMessage(`Password confirmation ${emptyErr}`),
-  body("confirmPassword")
+    .withMessage(`Password confirmation ${emptyErr}`)
     .custom(whitespaceValidator)
-    .withMessage(`Password confirmation ${whitespaceErr}`),
-  body("confirmPassword")
+    .withMessage(`Password confirmation ${whitespaceErr}`)
     .custom((value, { req }) => {
       return value === req.body.password;
     })
@@ -107,6 +131,12 @@ export const register = [
         res.status(201).json(user);
       });
     } catch (err) {
+      if (err.code === "P2002") {
+        const field = err.meta?.target?.[0] ?? "email";
+        return res.status(409).json({
+          errors: [{ mesg: `${field} already in use.`, path: field }],
+        });
+      }
       console.error(err);
       next(err);
     }
@@ -181,6 +211,12 @@ export const update = [
       });
       res.json(user);
     } catch (err) {
+      if (err.code === "P2002") {
+        const field = err.meta?.target?.[0] ?? "email";
+        return res.status(409).json({
+          errors: [{ mesg: `${field} already in use.`, path: field }],
+        });
+      }
       console.error(err);
       next(err);
     }
