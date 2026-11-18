@@ -4,7 +4,6 @@ import Header from "./components/Header";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [reload, setReload] = useState(0);
 
   useEffect(() => {
     fetch("/api/v1/auth/me", { credentials: "include" })
@@ -17,13 +16,8 @@ function App() {
 
   return (
     <>
-      <Header
-        user={user}
-        setUser={setUser}
-        reload={reload}
-        setReload={setReload}
-      />
-      <Outlet context={{ user, setUser, reload, setReload }} />
+      <Header user={user} setUser={setUser} />
+      <Outlet context={{ user, setUser }} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-export default function Header({ user, setUser, reload, setReload }) {
+export default function Header({ user, setUser }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -7,9 +7,8 @@ export default function Header({ user, setUser, reload, setReload }) {
       method: "POST",
     });
 
-    if (res.ok()) {
+    if (res.ok) {
       setUser(null);
-      setReload(reload + 1);
     }
   }
 
