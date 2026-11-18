@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.resolve(import.meta.dirname, "public")));
 
 if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL not set");
 if (!process.env.SECRET_KEY) throw new Error("SECRET_KEY not set");
@@ -18,7 +18,7 @@ sessionConfig(app);
 
 app.use("/api", apiRoutes);
 
-const dist = path.resolve("../client/dist");
+const dist = path.resolve(import.meta.dirname, "../client/dist");
 app.use(express.static(dist));
 app.get("/*splat", (_req, res) => res.sendFile(path.join(dist, "index.html")));
 
