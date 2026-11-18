@@ -23,8 +23,8 @@ export default function Header({ user, setUser }) {
           </form>
         ) : (
           <>
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
+            <a href="/auth/register">Register</a>
+            <a href="/auth/login">Login</a>
           </>
         )}
       </nav>
