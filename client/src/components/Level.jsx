@@ -67,6 +67,12 @@ export default function Level() {
   return (
     <div>
       <h1>Level {id}</h1>
+      <nav>
+        <a href={Number(id) > 1 && `/levels/${Number(id) - 1}`}>
+          Previous Level
+        </a>
+        <a href={Number(id) < 12 && `/levels/${Number(id) + 1}`}>Next Level</a>
+      </nav>
       <img
         src={`/images/${id}.jpg`}
         alt={`Level ${id}`}
