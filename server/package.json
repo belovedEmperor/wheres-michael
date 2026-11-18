@@ -12,9 +12,7 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "devDependencies": {
-    "prisma": "^7.10.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.1",
     "@prisma/client": "^7.10.1",
@@ -27,6 +25,11 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-session": "^1.0.2",
-    "pg": "^8.23.1"
+    "pg": "^8.23.1",
+    "prisma": "^7.10.1"
+  },
+  "allowScripts": {
+    "@prisma/engines@7.10.1": true,
+    "prisma@7.10.1": true
   }
 }

@@ -1,7 +1,7 @@
 Build command:
 
 ```bash
-cd client && npm ci && npm run build && cd ../server && npm ci && node scripts/seed.js
+cd client && npm ci && npm run build && cd ../server && npm ci && npx prisma generate && node ./scripts/seed.js
 ```
 
 Run:
