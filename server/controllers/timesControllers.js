@@ -75,6 +75,7 @@ export const getMany = [
         where: {
           userId: userId ? Number(userId) : undefined,
           imageId: imageId ? Number(imageId) : undefined,
+          durationMs: { not: null },
         },
         orderBy: sort ? { durationMs: order } : undefined,
         take: Number(limit) || 20,
