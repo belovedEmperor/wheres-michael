@@ -15,6 +15,7 @@ export default function Header({ user, setUser }) {
   return (
     <div>
       <nav>
+        <a href="/levels">Levels</a>
         {user ? (
           <form onSubmit={handleSubmit}>
             <label>
