@@ -29,7 +29,7 @@ app.use((err, req, res, next) => {
     process.env.NODE_ENV === "production" && status === 500
       ? "Internal server error."
       : err.message;
-  res.status(status).json({ errors: [{ mesg: message }] });
+  res.status(status).json({ errors: [{ msg: message }] });
 });
 
 const PORT = process.env.PORT || 3000;

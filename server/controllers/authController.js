@@ -134,7 +134,7 @@ export const register = [
       if (err.code === "P2002") {
         const field = err.meta?.target?.[0] ?? "email";
         return res.status(409).json({
-          errors: [{ mesg: `${field} already in use.`, path: field }],
+          errors: [{ msg: `${field} already in use.`, path: field }],
         });
       }
       console.error(err);
@@ -214,7 +214,7 @@ export const update = [
       if (err.code === "P2002") {
         const field = err.meta?.target?.[0] ?? "email";
         return res.status(409).json({
-          errors: [{ mesg: `${field} already in use.`, path: field }],
+          errors: [{ msg: `${field} already in use.`, path: field }],
         });
       }
       console.error(err);

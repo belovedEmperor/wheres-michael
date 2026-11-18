@@ -3,7 +3,7 @@ import { useRouteError, isRouteErrorResponse } from "react-router";
 export default function ErrorPage() {
   const error = useRouteError();
   if (isRouteErrorResponse(error)) {
-    const msgs = error.data?.errors?.map((e) => e.msg ?? e.mesg).join(", ");
+    const msgs = error.data?.errors?.map((e) => e.msg ?? e.msg).join(", ");
     return (
       <>
         <h1>
