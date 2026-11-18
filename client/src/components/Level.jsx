@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import LevelLeaderboard from "./LevelLeaderboard";
 
 export default function Level() {
   const { id } = useParams();
@@ -82,6 +83,7 @@ export default function Level() {
         Submit
       </button>
       {lastTime && <p>Last time: {lastTime} ms</p>}
+      {level && <LevelLeaderboard id={level?.id} />}
     </div>
   );
 }

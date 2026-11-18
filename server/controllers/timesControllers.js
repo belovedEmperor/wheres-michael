@@ -47,6 +47,7 @@ export const getOne = [
       const { id } = matchedData(req);
       const time = await prisma.userTimes.findUnique({
         where: { id: Number(id) },
+        include: { user: { select: { username: true } } },
       });
       return res.json(time);
     } catch (err) {
@@ -80,6 +81,7 @@ export const getMany = [
         orderBy: sort ? { durationMs: order } : undefined,
         take: Number(limit) || 20,
         skip: Number(offset) || 0,
+        include: { user: { select: { username: true } } },
       });
       return res.json(times);
     } catch (err) {
