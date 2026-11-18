@@ -1,4 +1,5 @@
 import "dotenv/config";
+import path from "node:path";
 import express from "express";
 import { sessionConfig } from "./config/passport.js";
 import apiRoutes from "./routes/index.js";
@@ -16,6 +17,10 @@ if (!process.env.SALT_LENGTH) throw new Error("SALT_LENGTH not set");
 sessionConfig(app);
 
 app.use("/api", apiRoutes);
+
+const dist = path.resolve("../client/dist");
+app.use(express.static(dist));
+app.get("/*splat", (_req, res) => res.sendFile(path.join(dist, "index.html")));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (errors) => {

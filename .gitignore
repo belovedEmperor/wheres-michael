@@ -12,3 +12,5 @@ devenv.local.yaml
 Session.vim
 node_modules
 .env
+
+dist
