@@ -22,6 +22,16 @@ const dist = path.resolve("../client/dist");
 app.use(express.static(dist));
 app.get("/*splat", (_req, res) => res.sendFile(path.join(dist, "index.html")));
 
+app.use((err, req, res, next) => {
+  console.error(err);
+  const status = err.status || 500;
+  const message =
+    process.env.NODE_ENV === "production" && status === 500
+      ? "Internal server error."
+      : err.message;
+  res.status(status).json({ errors: [{ mesg: message }] });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (errors) => {
   if (errors) {
